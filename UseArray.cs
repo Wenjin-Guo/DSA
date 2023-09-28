@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -87,5 +89,21 @@ Array may contain duplicates. */
             }
             return sortedArray;
         } 
+
+        public int removeDuplicates(int[] nums){
+            //Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length. Do not allocate extra space for another array; you must do this by modifying the input array in-place with O(1) extra memory.
+            //Example: Input: nums = [1, 1, 2] 
+            //output: Output: 2
+            int count=0;
+            for(int i=0;i<nums.Length;i++){
+                for(int j=i+1;j<nums.Length;j++){
+                    if(nums[i]!=nums[j]){
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
     }
 }

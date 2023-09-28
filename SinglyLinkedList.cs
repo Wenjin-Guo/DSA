@@ -12,7 +12,6 @@ namespace DSA
         public int size;
 
         public Node createSinglyLinkedList(int nodeValue){
-            head = new Node();
             Node node = new Node();
             node.next = null;
             node.value = 5;
