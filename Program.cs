@@ -3,9 +3,14 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Collections.Generic;
+using DSA;
 class Hello{
     static void Main(string[] args){
         
+        /* int[] myArray = {84,85,86,87,85,90,85,83,23,45,84,1,2,0};    
+        foreach(var item in UseArray.findTopTwoScores(myArray)){
+            Console.Write(item + ", ");
+        }; */
 
         /* ArrayList arrayList = new ArrayList();
         arrayList.Add(1);
@@ -24,38 +29,11 @@ class Hello{
 
         Console.Write(3^1^1); */
 
-        // Create the link list.
-        string[] words =
-            { "the", "fox", "jumps", "over", "the", "dog" };
-        LinkedList<string> sentence = new LinkedList<string>(words);
-        Display(sentence, "The linked list values:");
-        Console.WriteLine("sentence.Contains(\"jumps\") = {0}",
-            sentence.Contains("jumps"));
-
-        // Add the word 'today' to the beginning of the linked list.
-        sentence.AddFirst("today");
-        Display(sentence, "Test 1: Add 'today' to beginning of the list:");
-
-        // Move the first node to be the last node.
-        LinkedListNode<string> mark1 = sentence.First;
-        sentence.RemoveFirst();
-        sentence.AddLast(mark1);
-        Display(sentence, "Test 2: Move first node to be last node:");
-
-        // Change the last node to 'yesterday'.
-        sentence.RemoveLast();
-        sentence.AddLast("yesterday");
-        Display(sentence, "Test 3: Change the last node to 'yesterday':");
-
-        static void Display(LinkedList<string> words, string test)
-        {   
-            Console.WriteLine(test);
-            foreach (string word in words)
-            {
-                Console.Write(word + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine();
-        }
+        /* int[] arr = {1, 1, 2, 2, 3, 4, 5};
+        int[] duplicatArray = DSA.UseArray.removeDuplicates(arr);
+        foreach(int item in duplicatArray){
+            Console.Write(item + ", ");
+        } */
     }
+        
 }

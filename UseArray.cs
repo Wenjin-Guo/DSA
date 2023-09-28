@@ -22,19 +22,26 @@ namespace DSA
             Console.Write(arr[row]);
         } */
 
-        /* int[] myArray = {84,85,86,87,85,90,85,83,23,45,84,1,2,0};
-        int firstScore = int.MinValue;
-        int secondScore = int.MinValue;
+        public static int[] findTopTwoScores(int[] array){
+            /* Given an array, write a function to get first, second best scores from the array and return it in new array.
+Array may contain duplicates. */
+            //Example: myArray = {84,85,86,87,85,90,85,83,23,45,84,1,2,0}
+            //return: firstSecond(myArray) // {90, 87}
+            int firstScore = int.MinValue;
+            int secondScore = int.MinValue;
 
-        foreach(int i in myArray){
-            if(i>firstScore){
-                secondScore = firstScore;
-                firstScore = i;
-            }else if(i>secondScore && i<firstScore){
-                secondScore = i;
+            foreach(int i in array){
+                if(i>firstScore){
+                    secondScore = firstScore;
+                    firstScore = i;
+                }else if(i>secondScore && i<firstScore){
+                    secondScore = i;
+                }
             }
+            return new int[]{firstScore,secondScore};
         }
-        Console.Write(firstScore+","+secondScore); */
+        
+        
 
         public static int findMissingNumberInArray(int[] arr){
             //Write Java function called findMissingNumberInArray that takes an integer array containing n-1 unique elements from a range of 1 to n, with one missing number, and returns the missing number.
@@ -56,7 +63,29 @@ namespace DSA
             //Write a function which takes integer array as a parameter and returns a new integer array with unique elements. (remove duplicates)
             // example: removeDuplicates({1, 1, 2, 2, 3, 4, 5})
             // output: [1, 2, 3, 4, 5]
-            return new int[2];
+            int[] duplicateNum = arr;
+            int count = 0;
+            for(int i=0;i<arr.Length;i++){
+                for(int j=i+1;j<arr.Length;j++){
+                    if(arr[i]==arr[j]){
+                        duplicateNum[j]=int.MinValue;
+                    }
+                }
+            }
+            foreach(int i in duplicateNum){
+                if(i!=int.MinValue){
+                    count++;
+                }
+            }
+            int[] sortedArray = new int[count];
+            int indices = 0;
+            foreach(int i in duplicateNum){
+                if(i!=int.MinValue){
+                    sortedArray[indices] = i;
+                    indices++;
+                }
+            }
+            return sortedArray;
         } 
     }
 }
