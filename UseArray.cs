@@ -10,7 +10,7 @@ namespace DSA
     public class UseArray
     {
         /* int[,] arr; 
-        int[,] arr = new int[2,2];
+        int[,] arr = new int[2,2]; //2d integer array with 2 rows and 2 columns
         int[,] arr= {{1,2},{3,4}};
         for(int row=0;row<arr.GetLength(0);row++){
             for(int col=0; col<arr.GetLength(1);col++){
@@ -90,7 +90,7 @@ Array may contain duplicates. */
             return sortedArray;
         } 
 
-        public int removeDuplicates(int[] nums){
+        public static int removeDuplicatesSecond(int[] nums){
             //Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length. Do not allocate extra space for another array; you must do this by modifying the input array in-place with O(1) extra memory.
             //Example: Input: nums = [1, 1, 2] 
             //output: Output: 2
@@ -105,5 +105,37 @@ Array may contain duplicates. */
             return count;
         }
 
+        public static int maxProfit(int[] prices){
+            //You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+            //Example: Input: prices = [7, 1, 5, 3, 6, 4] 
+            //Output: Output: 5 
+            //explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+            /* int length = prices.Length;
+            List<List<int>> priceDayPair = new List<List<int>>();
+            for(int i=0;i<length;i++){
+                for(int j=i+1;j<length;j++){
+                    if(prices[j]>prices[i]){
+                        priceDayPair.Add(new List<int>{prices[j]-prices[i],j-i});
+                    }
+                }
+            }
+            int maxP = priceDayPair[0][0];;
+            for(int i=0;i<priceDayPair.Count-1;i++){
+                if(priceDayPair[i+1][0]>maxP){
+                    maxP = priceDayPair[i+1][0];
+                }
+            }
+            return maxP; */
+            int minPrice = int.MaxValue;
+            int maxProfit = 0;
+            foreach(int price in prices){
+                if(price<minPrice){
+                    minPrice = price;
+                }else if(price-minPrice>maxProfit){
+                    maxProfit = price - minPrice;
+                }
+            }
+            return maxProfit;
+        }
     }
 }

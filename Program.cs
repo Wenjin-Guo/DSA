@@ -22,7 +22,8 @@ class Hello{
         {
             Console.Write(item + ", ");
         }
-        Console.WriteLine(arrayList[2]); */
+        Console.WriteLine(arrayList[2]);
+        Console.WriteLine(arrayList.Count); */
 
        /*  int[] myArray = {1,2,3,4,6};
         DSA.UseArray.findMissingNumberInArray(myArray);
@@ -34,6 +35,13 @@ class Hello{
         foreach(int item in duplicatArray){
             Console.Write(item + ", ");
         } */
+
+        /* SinglyLinkedList sll = new SinglyLinkedList();
+        sll.createSinglyLinkedList(6);
+        Console.Write("head: "+sll.head.value+" tail: "+sll.tail.value); */
+
+        int[] prices = {7, 8, 5, 3, 6, 4,8,10,12,5};
+        Console.WriteLine( DSA.UseArray.maxProfit(prices));
     }
         
 }
