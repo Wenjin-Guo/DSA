@@ -40,8 +40,15 @@ class Hello{
         sll.createSinglyLinkedList(6);
         Console.Write("head: "+sll.head.value+" tail: "+sll.tail.value); */
 
-        int[] prices = {7, 8, 5, 3, 6, 4,8,10,12,5};
-        Console.WriteLine( DSA.UseArray.maxProfit(prices));
+        /* int[] prices = {7, 8, 5, 3, 6, 4,8,10,12,5};
+        Console.WriteLine( DSA.UseArray.maxProfit(prices)); */
+
+        int[] nums = {2,7,11,15};
+        int target = 9;
+        foreach(int i in DSA.UseArray.twoSum(nums,target)){
+            Console.Write(i +", ");
+        }
+        
     }
         
 }
