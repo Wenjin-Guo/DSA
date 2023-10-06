@@ -110,7 +110,7 @@ Array may contain duplicates. */
             //Example: Input: prices = [7, 1, 5, 3, 6, 4] 
             //Output: Output: 5 
             //explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-            /* int length = prices.Length;
+            int length = prices.Length;
             List<List<int>> priceDayPair = new List<List<int>>();
             for(int i=0;i<length;i++){
                 for(int j=i+1;j<length;j++){
@@ -125,8 +125,8 @@ Array may contain duplicates. */
                     maxP = priceDayPair[i+1][0];
                 }
             }
-            return maxP; */
-            int minPrice = int.MaxValue;
+            return maxP;
+            /* int minPrice = int.MaxValue;
             int maxProfit = 0;
             foreach(int price in prices){
                 if(price<minPrice){
@@ -135,7 +135,7 @@ Array may contain duplicates. */
                     maxProfit = price - minPrice;
                 }
             }
-            return maxProfit;
+            return maxProfit; */
         }
 
         public static int[] twoSum(int[] nums, int target){
@@ -153,7 +153,46 @@ Array may contain duplicates. */
                 }
             }
             return new int[2];
-        
+        }
+
+        public static bool permutation(int[] array1, int[] array2){
+            //Your are given two integer arrays. Write a program to check if they are permutation of each other.
+            //Example: int[] array1 = {1,2,3,4,5}; int[] array2 = {5,1,2,3,4};
+            //permutation(array1, array2) // true
+            /* bool permutation = false;
+            if(array1.Length!=array2.Length){
+                return false;
+            }
+            for(int i=0;i<array1.Length;i++){
+                permutation = false;
+                for(int j=0;j<array2.Length;j++){
+                    if(array1[i]==array2[j]){
+                        permutation = true;
+                    }
+                }
+                if(permutation == false){
+                    return permutation;
+                }
+            }
+            return true; */
+            if(array1.Length!=array2.Length){
+                return false;
+            }
+            int sum1=0, sum2=0;
+            int mul1 = 1, mul2 = 1;
+            for(int i=0;i<array1.Length;i++){
+                sum1+=array1[i];
+                sum2+=array2[i];
+                mul1*=array1[i];
+                mul2*=array2[i];
+            }
+            
+            if(mul1==mul2 && sum1==sum2){
+                return true;
+            }else{
+                return false;
+            }
+
         }
     }
 }

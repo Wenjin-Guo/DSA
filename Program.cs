@@ -43,12 +43,15 @@ class Hello{
         /* int[] prices = {7, 8, 5, 3, 6, 4,8,10,12,5};
         Console.WriteLine( DSA.UseArray.maxProfit(prices)); */
 
-        int[] nums = {2,7,11,15};
+        /* int[] nums = {2,7,11,15};
         int target = 9;
         foreach(int i in DSA.UseArray.twoSum(nums,target)){
             Console.Write(i +", ");
-        }
+        } */
         
+        int[] array1 = {1,2,3,4,5};
+        int[] array2 = {5,1,2,3,4,};
+        Console.WriteLine(DSA.UseArray.permutation(array1,array2));
     }
         
 }
