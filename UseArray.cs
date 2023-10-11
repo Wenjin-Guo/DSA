@@ -194,5 +194,27 @@ Array may contain duplicates. */
             }
 
         }
+
+        public static void rotateMatrix(int[][] matrix){
+            //Given an image represented by an NxN matrix write a method to rotate the image by 90 degrees. 
+            //public boolean rotateMatrix(int[][] matrix) { if (matrix.length == 0 || matrix.length != matrix[0].length) 
+            //return false; int n = matrix.length; for (int layer = 0; layer < n/2; layer++) { int first = layer; int last = n - 1 - layer; for (int i=first; i
+            //leetcode48
+            int size = matrix.Length;
+            for(int i=0;i<size;i++){
+                for(int j=0;j<size;j++){
+                    matrix[i][j]=matrix[i][j]^matrix[j][i];
+                    matrix[j][i]=matrix[i][j]^matrix[j][i];
+                    matrix[i][j]=matrix[i][j]^matrix[j][i];
+                }
+            }
+            /* for(int i=0;i<size/2;i++){
+                int[] temp = matrix[i];
+                matrix[i] = matrix[size-1-i];
+                matrix[size-1-i] = temp;
+            } */
+        }
+
+
     }
 }

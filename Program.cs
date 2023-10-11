@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Collections.Generic;
 using DSA;
+
 class Hello{
     static void Main(string[] args){
         
@@ -49,9 +50,36 @@ class Hello{
             Console.Write(i +", ");
         } */
         
-        int[] array1 = {1,2,3,4,5};
+        /* int[] array1 = {1,2,3,4,5};
         int[] array2 = {5,1,2,3,4,};
-        Console.WriteLine(DSA.UseArray.permutation(array1,array2));
-    }
-        
+        Console.WriteLine(DSA.UseArray.permutation(array1,array2)); */
+
+        /* int a = 10;
+        int b = 2;
+        (a, b) = (b, a);
+        Console.Write("a: "+a+"\nb: "+b); 
+        int c = 5, d=7;
+        c=c^d;
+        d=c^d;
+        c=c^d;
+        Console.Write("\nc: "+c+"\nd: "+d); */
+       
+       /* int[][] matrix = {
+        new int[]{1,2,3},
+        new int[]{4,5,6},
+        new int[]{7,8,9}
+       };
+       DSA.UseArray.rotateMatrix(matrix);
+       for (int i = 0; i < matrix.Length; i++)
+        {
+            for (int j = 0; j < matrix[i].Length; j++)
+            {
+                System.Console.Write("{0}{1}", matrix[i][j], j == (matrix[i].Length - 1) ? "" : " ");
+            }
+            System.Console.WriteLine();
+        } */
+
+        int temp = 7;
+        Console.Write(7/2);
+    }      
 }
