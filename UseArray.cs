@@ -215,6 +215,14 @@ Array may contain duplicates. */
             } */
         }
 
+        public static void reverse(int[] array){
+            for(int i=0; i<array.Length/2;i++){
+                int other = array.Length-1-i;
+                int temp = array[i];
+                array[i] = array[other];
+                array[other] = temp;
+            }
+        }
 
     }
 }

@@ -69,7 +69,6 @@ class Hello{
         new int[]{4,5,6},
         new int[]{7,8,9}
        };
-       Console.Write(matrix.Length);
        /* DSA.UseArray.rotateMatrix(matrix);
        for (int i = 0; i < matrix.Length; i++)
         {
