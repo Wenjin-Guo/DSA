@@ -222,6 +222,7 @@ Array may contain duplicates. */
                 array[i] = array[other];
                 array[other] = temp;
             }
+            Console.Write($"{string.Join(",", array)}");
         }
 
     }
