@@ -200,12 +200,12 @@ Array may contain duplicates. */
             //public boolean rotateMatrix(int[][] matrix) { if (matrix.length == 0 || matrix.length != matrix[0].length) 
             //return false; int n = matrix.length; for (int layer = 0; layer < n/2; layer++) { int first = layer; int last = n - 1 - layer; for (int i=first; i
             //leetcode48
-            int size = matrix.Length;
-            for(int i=0;i<size;i++){
-                for(int j=0;j<size;j++){
-                    matrix[i][j]=matrix[i][j]^matrix[j][i];
-                    matrix[j][i]=matrix[i][j]^matrix[j][i];
-                    matrix[i][j]=matrix[i][j]^matrix[j][i];
+            int rowSize = matrix.Length;
+            int temp;
+            for(int i=0;i<rowSize;i++){
+                for(int j=0;j<rowSize;j++){
+                    temp = matrix[i][rowSize-1-j];
+                    
                 }
             }
             /* for(int i=0;i<size/2;i++){

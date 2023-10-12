@@ -64,12 +64,13 @@ class Hello{
         c=c^d;
         Console.Write("\nc: "+c+"\nd: "+d); */
        
-       /* int[][] matrix = {
+       int[][] matrix = {
         new int[]{1,2,3},
         new int[]{4,5,6},
         new int[]{7,8,9}
        };
-       DSA.UseArray.rotateMatrix(matrix);
+       Console.Write(matrix.Length);
+       /* DSA.UseArray.rotateMatrix(matrix);
        for (int i = 0; i < matrix.Length; i++)
         {
             for (int j = 0; j < matrix[i].Length; j++)
@@ -79,7 +80,7 @@ class Hello{
             System.Console.WriteLine();
         } */
 
-        int temp = 7;
-        Console.Write(7/2);
+        /* int temp = 7;
+        Console.Write(7/2); */
     }      
 }
