@@ -200,7 +200,7 @@ Array may contain duplicates. */
             //public boolean rotateMatrix(int[][] matrix) { if (matrix.length == 0 || matrix.length != matrix[0].length) 
             //return false; int n = matrix.length; for (int layer = 0; layer < n/2; layer++) { int first = layer; int last = n - 1 - layer; for (int i=first; i
             //leetcode48
-            int rowSize = matrix.Length; //rotate from outer layer to inner layer, swap 4 coner data
+            /* int rowSize = matrix.Length; //rotate from outer layer to inner layer, swap 4 coner data
             for(int layer=0;layer<rowSize/2;layer++){
                 int first = layer;
                 int last = rowSize-1-layer;
@@ -212,22 +212,19 @@ Array may contain duplicates. */
                     matrix[last][last-offset] = matrix[first+offset][last];//bot right = top right
                     matrix[first+offset][last] = temp; //top right = top left
                 }
-            }
-            /* for(int i=0;i<size/2;i++){
-                int[] temp = matrix[i];
-                matrix[i] = matrix[size-1-i];
-                matrix[size-1-i] = temp;
             } */
+            transposeJaggedArray(matrix);
+            mirrorJaggedArray(matrix);
         }
 
         public static void reverse(int[] array){
             for(int i=0; i<array.Length/2;i++){
-                int other = array.Length-1-i;
+                int last = array.Length-1-i;
                 int temp = array[i];
-                array[i] = array[other];
-                array[other] = temp;
+                array[i] = array[last];
+                array[last] = temp;
             }
-            Console.Write($"[{string.Join(",", array)}]");
+            Console.Write(string.Join(", ",array));
         }
 
         public static void printJaggedArray(int[][] matrix){
@@ -238,6 +235,24 @@ Array may contain duplicates. */
                     System.Console.Write("{0}{1}", matrix[i][j], j == (matrix[i].Length - 1) ? "" : " ");
                 }
                 System.Console.WriteLine();
+            }
+        }
+
+        public static void transposeJaggedArray(int[][] matrix){
+            //only works for n x n matrix
+            for(int i=0;i<matrix.Length;i++){
+                for(int j=i+1;j<matrix[0].Length;j++){
+                    (matrix[i][j],matrix[j][i])=(matrix[j][i],matrix[i][j]);
+                }
+            }
+        }
+
+        public static void mirrorJaggedArray(int[][] matrix){
+            for(int i=0;i<matrix.Length;i++){
+                for(int j=0;j<matrix[i].Length/2;j++){
+                    int last = matrix[i].Length-1-j;
+                    (matrix[i][j],matrix[i][last])=(matrix[i][last],matrix[i][j]);
+                }
             }
         }
     }

@@ -11,7 +11,10 @@ class Hello{
         /* int[] myArray = {84,85,86,87,85,90,85,83,23,45,84,1,2,0};    
         foreach(var item in UseArray.findTopTwoScores(myArray)){
             Console.Write(item + ", ");
-        }; */
+        }; 
+        Console.WriteLine();
+        Console.Write(string.Join(", ",UseArray.findTopTwoScores(myArray))); */
+       
 
         /* ArrayList arrayList = new ArrayList();
         arrayList.Add(1);
@@ -77,14 +80,30 @@ class Hello{
         new int[]{9,10,11,12},
         new int[]{13,14,15,16}
        };
-       DSA.UseArray.rotateMatrix(matrix1);
-       DSA.UseArray.printJaggedArray(matrix1);
-        //Console.Write(matrix[2][0]);
+       int[][] matrix2={
+        new int[]{1,2},
+        new int[]{3,4}
+       };
+       DSA.UseArray.rotateMatrix(matrix);
+       //DSA.UseArray.transposeJaggedArray(matrix);
+       DSA.UseArray.printJaggedArray(matrix);
 
         /* int temp = 7;
         Console.Write(7/2); */
 
         /* int[] array = {1,2,3,4,5};
         DSA.UseArray.reverse(array); */
+
+        /* List<int> numbers = new List<int>() { 5, 6, 4 };
+        // Violates IDE0180.
+        int temp = numbers[0];
+        numbers[0] = numbers[1];
+        numbers[1] = temp;
+        // Fixed code.
+        Console.WriteLine(numbers[1]);
+        (numbers[0], numbers[1]) = (numbers[1], numbers[0]);
+        Console.WriteLine(numbers[1]);
+        Console.Write(string.Join(", ",numbers)); */
+            
     }      
 }
