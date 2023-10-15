@@ -22,7 +22,7 @@ namespace DSA
             return head;
         }
 
-        public void isertInLinkedList(int nodeValue, int location){
+        public void insertInLinkedList(int nodeValue, int location){
             Node nn = new Node();
             nn.value = nodeValue;
             if(head == null){

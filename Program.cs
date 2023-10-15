@@ -64,25 +64,27 @@ class Hello{
         c=c^d;
         Console.Write("\nc: "+c+"\nd: "+d); */
        
-       /* int[][] matrix = {
-        new int[]{1,2,3},
-        new int[]{4,5,6},
-        new int[]{7,8,9}
+       int[][] matrix1 = {
+        new int[]{1,2,3,4,5},
+        new int[]{11,12,13,14,15},
+        new int[]{21,22,23,24,25},
+        new int[]{31,32,33,34,35},
+        new int[]{41,42,43,44,45},
        };
-       DSA.UseArray.rotateMatrix(matrix);
-       for (int i = 0; i < matrix.Length; i++)
-        {
-            for (int j = 0; j < matrix[i].Length; j++)
-            {
-                System.Console.Write("{0}{1}", matrix[i][j], j == (matrix[i].Length - 1) ? "" : " ");
-            }
-            System.Console.WriteLine();
-        } */
+       int[][] matrix = {
+        new int[]{1,2,3,4},
+        new int[]{5,6,7,8},
+        new int[]{9,10,11,12},
+        new int[]{13,14,15,16}
+       };
+       DSA.UseArray.rotateMatrix(matrix1);
+       DSA.UseArray.printJaggedArray(matrix1);
+        //Console.Write(matrix[2][0]);
 
         /* int temp = 7;
         Console.Write(7/2); */
 
-        int[] array = {1,2,3,4,5};
-        DSA.UseArray.reverse(array);
+        /* int[] array = {1,2,3,4,5};
+        DSA.UseArray.reverse(array); */
     }      
 }

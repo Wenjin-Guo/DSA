@@ -200,12 +200,17 @@ Array may contain duplicates. */
             //public boolean rotateMatrix(int[][] matrix) { if (matrix.length == 0 || matrix.length != matrix[0].length) 
             //return false; int n = matrix.length; for (int layer = 0; layer < n/2; layer++) { int first = layer; int last = n - 1 - layer; for (int i=first; i
             //leetcode48
-            int rowSize = matrix.Length;
-            int temp;
-            for(int i=0;i<rowSize;i++){
-                for(int j=0;j<rowSize;j++){
-                    temp = matrix[i][rowSize-1-j];
-                    
+            int rowSize = matrix.Length; //rotate from outer layer to inner layer, swap 4 coner data
+            for(int layer=0;layer<rowSize/2;layer++){
+                int first = layer;
+                int last = rowSize-1-layer;
+                for(int j=first;j<last;j++){
+                    int offset = j-first;
+                    int temp = matrix[first][first+offset]; //top left
+                    matrix[first][first+offset] = matrix[last-offset][first];//top left = bot left
+                    matrix[last-offset][first] = matrix[last][last-offset];//bot left = bot right
+                    matrix[last][last-offset] = matrix[first+offset][last];//bot right = top right
+                    matrix[first+offset][last] = temp; //top right = top left
                 }
             }
             /* for(int i=0;i<size/2;i++){
@@ -222,8 +227,18 @@ Array may contain duplicates. */
                 array[i] = array[other];
                 array[other] = temp;
             }
-            Console.Write($"{string.Join(",", array)}");
+            Console.Write($"[{string.Join(",", array)}]");
         }
 
+        public static void printJaggedArray(int[][] matrix){
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    System.Console.Write("{0}{1}", matrix[i][j], j == (matrix[i].Length - 1) ? "" : " ");
+                }
+                System.Console.WriteLine();
+            }
+        }
     }
 }
