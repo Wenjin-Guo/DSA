@@ -9,5 +9,7 @@ namespace DSA
     {
         public int value;
         public Node next;
+
+        
     }
 }

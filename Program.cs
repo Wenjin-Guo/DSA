@@ -67,7 +67,7 @@ class Hello{
         c=c^d;
         Console.Write("\nc: "+c+"\nd: "+d); */
        
-       int[][] matrix1 = {
+       /* int[][] matrix1 = {
         new int[]{1,2,3,4,5},
         new int[]{11,12,13,14,15},
         new int[]{21,22,23,24,25},
@@ -85,8 +85,7 @@ class Hello{
         new int[]{3,4}
        };
        DSA.UseArray.rotateMatrix(matrix);
-       //DSA.UseArray.transposeJaggedArray(matrix);
-       DSA.UseArray.printJaggedArray(matrix);
+       DSA.UseArray.printJaggedArray(matrix); */
 
         /* int temp = 7;
         Console.Write(7/2); */
@@ -104,6 +103,17 @@ class Hello{
         (numbers[0], numbers[1]) = (numbers[1], numbers[0]);
         Console.WriteLine(numbers[1]);
         Console.Write(string.Join(", ",numbers)); */
-            
+        
+        SinglyLinkedList linkedList = new SinglyLinkedList();
+        linkedList.createSinglyLinkedList(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(5);
+        linkedList.add(6);
+        linkedList.insertInLinkedList(100,2);
+        linkedList.printSinglyLinkedList();
+        Console.WriteLine("\nTail value: "+linkedList.tail.value);
+        Console.WriteLine("Size: "+linkedList.size);
     }      
 }

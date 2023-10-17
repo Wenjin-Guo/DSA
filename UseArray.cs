@@ -200,7 +200,7 @@ Array may contain duplicates. */
             //public boolean rotateMatrix(int[][] matrix) { if (matrix.length == 0 || matrix.length != matrix[0].length) 
             //return false; int n = matrix.length; for (int layer = 0; layer < n/2; layer++) { int first = layer; int last = n - 1 - layer; for (int i=first; i
             //leetcode48
-            /* int rowSize = matrix.Length; //rotate from outer layer to inner layer, swap 4 coner data
+            int rowSize = matrix.Length; //rotate from outer layer to inner layer, swap 4 coner data
             for(int layer=0;layer<rowSize/2;layer++){
                 int first = layer;
                 int last = rowSize-1-layer;
@@ -212,9 +212,9 @@ Array may contain duplicates. */
                     matrix[last][last-offset] = matrix[first+offset][last];//bot right = top right
                     matrix[first+offset][last] = temp; //top right = top left
                 }
-            } */
-            transposeJaggedArray(matrix);
-            mirrorJaggedArray(matrix);
+            }
+            /* transposeJaggedArray(matrix);
+            mirrorJaggedArray(matrix); */
         }
 
         public static void reverse(int[] array){
