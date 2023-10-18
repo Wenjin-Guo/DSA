@@ -104,7 +104,7 @@ class Hello{
         Console.WriteLine(numbers[1]);
         Console.Write(string.Join(", ",numbers)); */
         
-        SinglyLinkedList linkedList = new SinglyLinkedList();
+        /* SinglyLinkedList linkedList = new SinglyLinkedList();
         linkedList.createSinglyLinkedList(1);
         linkedList.insertInLinkedList(9,0);
         linkedList.insertInLinkedList(2,1);
@@ -119,6 +119,21 @@ class Hello{
         linkedList.printSinglyLinkedList();
         Console.WriteLine("\nTail value: "+linkedList.tail.value);
         Console.WriteLine("Head Value: "+linkedList.head.value);
-        Console.WriteLine("Size: "+linkedList.size);
+        Console.WriteLine("Size: "+linkedList.size); */
+
+        LinkedList<int> lls = new LinkedList<int>();
+        lls.AddLast(1);
+        lls.AddLast(2);
+        lls.AddLast(3);
+        lls.AddLast(4);
+        lls.AddLast(5);
+        foreach(int i in lls){
+            Console.Write("   {0}", i);
+        }
+        lls.Clear();
+        Console.Write("\n - - - - - - ");
+        foreach(int i in lls){
+            Console.Write("   {0}", i);
+        }
     }      
 }

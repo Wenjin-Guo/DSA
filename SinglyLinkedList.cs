@@ -106,5 +106,10 @@ namespace DSA
                 size--;
             }
         }
+
+        public void deleteSinglyLinkedList(){
+            head =null;
+            tail=null;
+        }
     }
 }
