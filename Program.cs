@@ -106,14 +106,19 @@ class Hello{
         
         SinglyLinkedList linkedList = new SinglyLinkedList();
         linkedList.createSinglyLinkedList(1);
-        linkedList.add(2);
-        linkedList.add(3);
-        linkedList.add(4);
-        linkedList.add(5);
-        linkedList.add(6);
-        linkedList.insertInLinkedList(100,2);
+        linkedList.insertInLinkedList(9,0);
+        linkedList.insertInLinkedList(2,1);
+        linkedList.insertInLinkedList(3,3);
+        linkedList.insertInLinkedList(4,4);
+        linkedList.insertInLinkedList(5,9); 
+        linkedList.insertInLinkedList(00,0);
+        linkedList.printSinglyLinkedList();
+        linkedList.insertInLinkedList(100,3);
+        linkedList.printSinglyLinkedList();
+        linkedList.deleteNode(10);
         linkedList.printSinglyLinkedList();
         Console.WriteLine("\nTail value: "+linkedList.tail.value);
+        Console.WriteLine("Head Value: "+linkedList.head.value);
         Console.WriteLine("Size: "+linkedList.size);
     }      
 }

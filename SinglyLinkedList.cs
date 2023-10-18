@@ -31,6 +31,14 @@ namespace DSA
             size++;
         }
 
+        public void addBeginning(int nodeValue){
+            Node nn = new Node();
+            nn.value = nodeValue;
+            nn.next = head;
+            head = nn;
+            size++;
+        }
+
         public void insertInLinkedList(int nodeValue, int location){
             Node nn = new Node();
             nn.value = nodeValue;
@@ -50,7 +58,7 @@ namespace DSA
             }else{                      // insert at location
                 Node tempNode = head;
                 int index = 0;
-                while(index < location){
+                while(index < location-1){
                     tempNode = tempNode.next;
                     index++;
                 }
@@ -66,6 +74,36 @@ namespace DSA
             while(tempNode != null){
                 Console.Write(tempNode.value+" ");
                 tempNode=tempNode.next;
+            }
+            Console.Write("\n");
+        }
+
+        public void deleteNode(int location){
+            if(location==0){
+                Console.WriteLine("Node start from 1");
+            }else if(location==1){
+                head = head.next;
+                size--;
+                if(size==0){
+                    tail=null;
+                }
+            }else if(location>=size){
+                Node tempNode = head;
+                for(int i=0;i<size-2;i++){
+                    tempNode = tempNode.next;
+                }
+                tempNode.next = null;
+                tail = tempNode;
+                size--;
+            }else{
+                Node tempNode = head;
+                int index =0;
+                while(index<location-2){
+                    tempNode = tempNode.next;
+                    index++;
+                }
+                tempNode.next =tempNode.next.next;
+                size--;
             }
         }
     }
