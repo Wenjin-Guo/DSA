@@ -121,7 +121,7 @@ class Hello{
         Console.WriteLine("Head Value: "+linkedList.head.value);
         Console.WriteLine("Size: "+linkedList.size); */
 
-        LinkedList<int> lls = new LinkedList<int>();
+        /* LinkedList<int> lls = new LinkedList<int>();
         lls.AddLast(1);
         lls.AddLast(2);
         lls.AddLast(3);
@@ -134,6 +134,18 @@ class Hello{
         Console.Write("\n - - - - - - ");
         foreach(int i in lls){
             Console.Write("   {0}", i);
-        }
+        } */
+
+        CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
+        csll.createCSLL(1);
+        csll.insertInCSLL(2,1); 
+        csll.insertInCSLL(3,2);
+        csll.insertInCSLL(4,3);
+        csll.insertInCSLL(5,4);
+        csll.insertInCSLL(6,5);
+        Console.WriteLine(csll.head.value);
+        csll.printCSLL();
+        csll.insertInCSLL(12,3);
+        csll.printCSLL();
     }      
 }
