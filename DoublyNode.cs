@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace DSA
+{
+    public class DoublyNode
+    {
+        public int value;
+        public DoublyNode next;
+        public DoublyNode prev;
+    }
+}

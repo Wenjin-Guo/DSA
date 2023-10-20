@@ -11,7 +11,7 @@ namespace DSA
         public Node tail;
         public int size;
 
-        public Node createSinglyLinkedList(int nodeValue){
+        public void createSinglyLinkedList(int nodeValue){
             Node node = new Node();
             node.next = null;
             node.value = nodeValue;
@@ -19,7 +19,7 @@ namespace DSA
             head = node;
             tail = node;
             size = 1;
-            return head;
+            //return head;
         }
 
         public void add(int nodeValue){
@@ -77,7 +77,10 @@ namespace DSA
         }
 
         public void deleteNode(int location){
-            if(location==0){
+            if(head==null){
+                Console.WriteLine("The Linked List does not exist!");
+            }
+            else if(location==0){
                 Console.WriteLine("Node start from 1");
             }else if(location==1){
                 head = head.next;
@@ -106,8 +109,12 @@ namespace DSA
         }
 
         public void deleteSinglyLinkedList(){
-            head =null;
-            tail=null;
+            if(head==null){
+                Console.WriteLine("The SLL does not exist!");
+            }else{
+                head =null;
+                tail=null;
+            }
         }
     }
 }

@@ -104,8 +104,9 @@ class Hello{
         Console.WriteLine(numbers[1]);
         Console.Write(string.Join(", ",numbers)); */
         
-        /* SinglyLinkedList linkedList = new SinglyLinkedList();
+        SinglyLinkedList linkedList = new SinglyLinkedList();
         linkedList.createSinglyLinkedList(1);
+        linkedList.printSinglyLinkedList();
         linkedList.insertInLinkedList(9,0);
         linkedList.insertInLinkedList(2,1);
         linkedList.insertInLinkedList(3,3);
@@ -119,7 +120,7 @@ class Hello{
         linkedList.printSinglyLinkedList();
         Console.WriteLine("\nTail value: "+linkedList.tail.value);
         Console.WriteLine("Head Value: "+linkedList.head.value);
-        Console.WriteLine("Size: "+linkedList.size); */
+        Console.WriteLine("Size: "+linkedList.size);
 
         /* LinkedList<int> lls = new LinkedList<int>();
         lls.AddLast(1);
@@ -136,7 +137,7 @@ class Hello{
             Console.Write("   {0}", i);
         } */
 
-        CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
+        /* CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
         csll.createCSLL(1);
         csll.insertInCSLL(2,1); 
         csll.insertInCSLL(3,2);
@@ -153,6 +154,6 @@ class Hello{
         csll.deleteNode(12);
         csll.printCSLL();
         Console.WriteLine("head value: "+csll.head.value);
-        Console.WriteLine("tail value: "+csll.tail.value);
+        Console.WriteLine("tail value: "+csll.tail.value); */
     }      
 }

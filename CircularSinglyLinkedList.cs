@@ -60,13 +60,19 @@ namespace DSA
         }
         
         public void deleteNode(int location){
-            if(location == 0){
+            if(head==null){
+                Console.WriteLine("The Linked List does not exist!");
+            }
+            else if(location == 0){
                 Console.Write("Node starts at 1.");
             }else if(location == 1){
                 Node tempNode = head;
                 head = tempNode.next;
                 tail.next = head;
                 size--;
+                if(size==0){
+                    deleteCSLL();
+                }
             }else if(location >= size){
                 Node tempNode = head;
                 for(int i=0; i<size-2;i++){
@@ -83,7 +89,16 @@ namespace DSA
                 tempNode.next = tempNode.next.next;
                 size--;
             }
+        }
 
+        public void deleteCSLL(){
+            if(head == null){
+                Console.WriteLine("The CSLL does not exist!");
+            }else{
+                head = null;
+                tail.next = null;
+                tail =null;
+            }
         }
     }
 }
