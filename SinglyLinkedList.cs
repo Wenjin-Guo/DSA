@@ -49,12 +49,10 @@ namespace DSA
             else if(location == 0){ // beginning of the node
                 nn.next = head;
                 head = nn;
-                size++;
             }else if(location >= size){  // insert at end of the node
                 nn.next = null;
                 tail.next = nn;
                 tail = nn;
-                size++;
             }else{                      // insert at location
                 Node tempNode = head;
                 int index = 0;
@@ -65,8 +63,8 @@ namespace DSA
                 Node nextNode = tempNode.next;
                 tempNode.next = nn; 
                 nn.next = nextNode;
-                size++;
             }
+            size++;
         }
 
         public void printSinglyLinkedList(){

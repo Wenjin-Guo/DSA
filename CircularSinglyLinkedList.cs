@@ -32,12 +32,10 @@ namespace DSA
                 nn.next = head;
                 head = nn;
                 tail.next = nn;
-                size++;
             }else if(location >= size){  // insert at end of the node
                 tail.next = nn;
                 tail = nn;
                 nn.next = head;
-                size++;
             }else{                      // insert at location
                 Node tempNode = head;
                 int index = 0;
@@ -48,8 +46,8 @@ namespace DSA
                 Node nextNode = tempNode.next;
                 tempNode.next = nn; 
                 nn.next = nextNode;
-                size++;
             }
+            size++;
         }
 
         public void printCSLL(){
@@ -59,6 +57,33 @@ namespace DSA
                 tempNode=tempNode.next;
             }
             Console.Write("\n");
+        }
+        
+        public void deleteNode(int location){
+            if(location == 0){
+                Console.Write("Node starts at 1.");
+            }else if(location == 1){
+                Node tempNode = head;
+                head = tempNode.next;
+                tail.next = head;
+                size--;
+            }else if(location >= size){
+                Node tempNode = head;
+                for(int i=0; i<size-2;i++){
+                    tempNode = tempNode.next;
+                }
+                tempNode.next = head;
+                tail = tempNode;
+                size--;
+            }else{
+                Node tempNode = head;
+                for(int i=0;i<location-2;i++){
+                    tempNode = tempNode.next;
+                }
+                tempNode.next = tempNode.next.next;
+                size--;
+            }
+
         }
     }
 }

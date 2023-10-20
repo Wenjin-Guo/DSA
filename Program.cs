@@ -143,9 +143,16 @@ class Hello{
         csll.insertInCSLL(4,3);
         csll.insertInCSLL(5,4);
         csll.insertInCSLL(6,5);
-        Console.WriteLine(csll.head.value);
+        Console.WriteLine("head value: "+csll.head.value);
         csll.printCSLL();
+        Console.WriteLine("tail value: "+csll.tail.value);
         csll.insertInCSLL(12,3);
         csll.printCSLL();
+        Console.WriteLine("head value: "+csll.head.value);
+        Console.WriteLine("tail value: "+csll.tail.value);
+        csll.deleteNode(12);
+        csll.printCSLL();
+        Console.WriteLine("head value: "+csll.head.value);
+        Console.WriteLine("tail value: "+csll.tail.value);
     }      
 }
