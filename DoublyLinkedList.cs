@@ -7,16 +7,23 @@ namespace DSA
 {
     public class DoublyLinkedList
     {
-        DoublyNode head;
-        DoublyNode tail;
+        Node head;
+        Node tail;
         int size;
 
         public void createDoublyLinkedList(int nodeValue){
-            DoublyNode node = new DoublyNode();
+            Node node = new Node();
             node.value = nodeValue;
             node.next = null;
             node.prev = null;
+            head = node;
+            tail = node;
             size=1;
         }
+
+        public void insertInDLL(int nodeValue, int location){
+            
+        }
+
     }
 }
