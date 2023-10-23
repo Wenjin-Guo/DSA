@@ -32,7 +32,7 @@ namespace DSA
                 nn.next = head;
                 head = nn;
                 tail.next = nn;
-            }else if(location >= size){  // insert at end of the node
+            }else if(location >= size-1){  // insert at end of the node
                 tail.next = nn;
                 tail = nn;
                 nn.next = head;
@@ -64,8 +64,6 @@ namespace DSA
                 Console.WriteLine("The Linked List does not exist!");
             }
             else if(location == 0){
-                Console.Write("Node starts at 1.");
-            }else if(location == 1){
                 Node tempNode = head;
                 head = tempNode.next;
                 tail.next = head;
@@ -73,7 +71,7 @@ namespace DSA
                 if(size==0){
                     deleteCSLL();
                 }
-            }else if(location >= size){
+            }else if(location >= size-1){
                 Node tempNode = head;
                 for(int i=0; i<size-2;i++){
                     tempNode = tempNode.next;
@@ -83,7 +81,7 @@ namespace DSA
                 size--;
             }else{
                 Node tempNode = head;
-                for(int i=0;i<location-2;i++){
+                for(int i=0;i<location-1;i++){
                     tempNode = tempNode.next;
                 }
                 tempNode.next = tempNode.next.next;

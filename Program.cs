@@ -147,13 +147,30 @@ class Hello{
         Console.WriteLine("head value: "+csll.head.value);
         csll.printCSLL();
         Console.WriteLine("tail value: "+csll.tail.value);
-        csll.insertInCSLL(12,3);
+        Console.WriteLine("size value: "+csll.size);
+        csll.insertInCSLL(12,6);
         csll.printCSLL();
         Console.WriteLine("head value: "+csll.head.value);
+        Console.WriteLine("head value: "+csll.tail.next.value);
         Console.WriteLine("tail value: "+csll.tail.value);
-        csll.deleteNode(12);
+        Console.WriteLine("size value: "+csll.size);
+        csll.deleteNode(1);
         csll.printCSLL();
         Console.WriteLine("head value: "+csll.head.value);
-        Console.WriteLine("tail value: "+csll.tail.value); */
+        Console.WriteLine("head value: "+csll.tail.next.value);
+        Console.WriteLine("tail value: "+csll.tail.value);
+        Console.WriteLine("size value: "+csll.size); */
+
+        DoublyLinkedList dll = new DoublyLinkedList();
+        dll.createDoublyLinkedList(1);
+        dll.insertInDLL(2,1);
+        dll.insertInDLL(0,0);
+        dll.insertInDLL(3,3);
+        dll.insertInDLL(4,4);
+        dll.printDLL();
+        Console.WriteLine("head value: "+dll.head.value);
+        Console.WriteLine("tail value: "+dll.tail.value);
+        Console.WriteLine("tail prev-value: "+dll.tail.prev.value);
+        Console.WriteLine("size value: "+dll.size);
     }      
 }

@@ -79,27 +79,24 @@ namespace DSA
         public void deleteNode(int location){
             if(head==null){
                 Console.WriteLine("The Linked List does not exist!");
-            }
-            else if(location==0){
-                Console.WriteLine("Node start from 1");
-            }else if(location==1){
+            }else if(location==0){ //delete the first node
                 head = head.next;
                 size--;
                 if(size==0){
                     tail=null;
                 }
-            }else if(location>=size){
+            }else if(location>=size){  //delete the last node
                 Node tempNode = head;
-                for(int i=0;i<size-2;i++){
+                for(int i=0;i<size-1;i++){
                     tempNode = tempNode.next;
                 }
                 tempNode.next = null;
                 tail = tempNode;
                 size--;
-            }else{
+            }else{                    //in the middle 
                 Node tempNode = head;
                 int index =0;
-                while(index<location-2){
+                while(index<location-1){
                     tempNode = tempNode.next;
                     index++;
                 }
