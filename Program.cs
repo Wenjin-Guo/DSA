@@ -137,7 +137,7 @@ class Hello{
             Console.Write("   {0}", i);
         } */
 
-        /* CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
+        CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
         csll.createCSLL(1);
         csll.insertInCSLL(2,1); 
         csll.insertInCSLL(3,2);
@@ -148,29 +148,33 @@ class Hello{
         csll.printCSLL();
         Console.WriteLine("tail value: "+csll.tail.value);
         Console.WriteLine("size value: "+csll.size);
-        csll.insertInCSLL(12,6);
+        csll.insertInCSLL(12,3);
         csll.printCSLL();
-        Console.WriteLine("head value: "+csll.head.value);
-        Console.WriteLine("head value: "+csll.tail.next.value);
-        Console.WriteLine("tail value: "+csll.tail.value);
-        Console.WriteLine("size value: "+csll.size);
+        Console.WriteLine("Index value: "+csll.getNode(3).value);
+        Console.WriteLine("Index next-value: "+csll.getNode(2).next.value);
         csll.deleteNode(1);
         csll.printCSLL();
         Console.WriteLine("head value: "+csll.head.value);
         Console.WriteLine("head value: "+csll.tail.next.value);
         Console.WriteLine("tail value: "+csll.tail.value);
-        Console.WriteLine("size value: "+csll.size); */
+        Console.WriteLine("size value: "+csll.size);
 
-        DoublyLinkedList dll = new DoublyLinkedList();
+        /* DoublyLinkedList dll = new DoublyLinkedList();
         dll.createDoublyLinkedList(1);
         dll.insertInDLL(2,1);
         dll.insertInDLL(0,0);
         dll.insertInDLL(3,3);
         dll.insertInDLL(4,4);
+        dll.insertInDLL(6,6);
+        dll.insertInDLL(5,5);
+        dll.insertInDLL(12,4);
         dll.printDLL();
         Console.WriteLine("head value: "+dll.head.value);
         Console.WriteLine("tail value: "+dll.tail.value);
         Console.WriteLine("tail prev-value: "+dll.tail.prev.value);
         Console.WriteLine("size value: "+dll.size);
+        Console.WriteLine("Index value: "+dll.getValue(4));
+        Console.WriteLine("Index prev-value: "+dll.getNode(5).prev.value);
+        Console.WriteLine("Index next-value: "+dll.getNode(3).next.value); */
     }      
 }

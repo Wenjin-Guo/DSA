@@ -98,5 +98,17 @@ namespace DSA
                 tail =null;
             }
         }
+
+        public Node getNode(int location){
+            Node tempNode = head;
+            if(location>=size){
+                return tail;
+            }else{
+                for(int i=0; i<location;i++){
+                    tempNode=tempNode.next;
+                }
+            }
+            return tempNode;
+        }
     }
 }

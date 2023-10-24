@@ -28,27 +28,26 @@ namespace DSA
                 createDoublyLinkedList(nodeValue);
             }else if(location ==0){    //at the beginning of the list
                 nn.next = head;
+                head.prev = nn;
                 head = nn;
                 nn.prev =null;
                 size++;
-            }else if(location >= size-1){    // at the end
-                Node tempNode = head;
-                for(int i=0;i<size-1;i++){
-                    tempNode=tempNode.next;
-                }
-                tempNode.next = nn;
-                tail = nn;
-                nn.prev = tempNode;
+            }else if(location >= size){    // at the end
+                tail.next = nn;
                 nn.next = null;
+                nn.prev = tail;
+                tail = nn;
                 size++;
-            }else{
+            }else{                          //in the middle
                 Node tempNode = head;
                 for(int i=0; i<location-1;i++){
                     tempNode=tempNode.next;
                 }
+                Node nextNode = tempNode.next;
                 tempNode.next = nn;
+                nn.next = nextNode;
                 nn.prev = tempNode;
-                nn.next = tempNode.next.next;
+                nn.next.prev = nn;
                 size++;
             }
         }
@@ -62,5 +61,28 @@ namespace DSA
             Console.Write("\n");
         }
 
+        public int getValue(int location){
+            Node tempNode = head;
+            if(location>=size){
+                return tail.value;
+            }else{
+                for(int i=0; i<location;i++){
+                    tempNode=tempNode.next;
+                }
+            }
+            return tempNode.value;
+        }
+
+        public Node getNode(int location){
+            Node tempNode = head;
+            if(location>=size){
+                return tail;
+            }else{
+                for(int i=0; i<location;i++){
+                    tempNode=tempNode.next;
+                }
+            }
+            return tempNode;
+        }
     }
 }
