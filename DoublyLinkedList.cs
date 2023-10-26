@@ -61,6 +61,17 @@ namespace DSA
             Console.Write("\n");
         }
 
+        public void reversePrintDLL(){
+            if(head!=null){
+                Node tempNode =tail;
+                for(int i=0;i<size;i++){
+                    Console.Write(tempNode.value+" ");
+                    tempNode = tempNode.prev;
+                }
+            }
+            Console.WriteLine();
+        }
+
         public int getValue(int location){
             Node tempNode = head;
             if(location>=size){

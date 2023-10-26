@@ -85,9 +85,9 @@ namespace DSA
                 if(size==0){
                     tail=null;
                 }
-            }else if(location>=size){  //delete the last node
+            }else if(location>=size-1){  //delete the last node
                 Node tempNode = head;
-                for(int i=0;i<size-1;i++){
+                for(int i=0;i<size-2;i++){
                     tempNode = tempNode.next;
                 }
                 tempNode.next = null;
