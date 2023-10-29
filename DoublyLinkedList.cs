@@ -68,6 +68,8 @@ namespace DSA
                     Console.Write(tempNode.value+" ");
                     tempNode = tempNode.prev;
                 }
+            }else{
+                Console.WriteLine("The DLL does not exist!");
             }
             Console.WriteLine();
         }
@@ -94,6 +96,10 @@ namespace DSA
                 }
             }
             return tempNode;
+        }
+
+        public void deleteNode(int location){
+            
         }
     }
 }
