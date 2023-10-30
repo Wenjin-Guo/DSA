@@ -98,6 +98,21 @@ namespace DSA
             return tempNode;
         }
 
+        public bool searchNode(int nodeValue){
+            if(head!=null){
+                Node tempNode = head;
+                for(int i=0;i<size;i++){
+                    if(tempNode.value == nodeValue){
+                        Console.WriteLine("The Node is found at index: "+i);
+                        return true;
+                    }
+                    tempNode = tempNode.next;
+                }
+            }
+            Console.WriteLine("The Node is NOT found");
+            return false;
+        }
+
         public void deleteNode(int location){
             
         }

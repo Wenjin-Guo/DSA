@@ -177,5 +177,7 @@ class Hello{
         Console.WriteLine("Index value: "+dll.getValue(4));
         Console.WriteLine("Index prev-value: "+dll.getNode(5).prev.value);
         Console.WriteLine("Index next-value: "+dll.getNode(3).next.value);
+        dll.searchNode(5);
+        dll.searchNode(120);
     }      
 }
