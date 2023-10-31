@@ -53,12 +53,16 @@ namespace DSA
         }
 
         public void printDLL(){
-            Node tempNode = head;
-            for(int i=0; i<size;i++){
-                Console.Write(tempNode.value+" ");
-                tempNode=tempNode.next;
+            if(head==null){
+                Console.WriteLine("The DLL does not exist!");
+            }else{
+                Node tempNode = head;
+                for(int i=0; i<size;i++){
+                    Console.Write(tempNode.value+" ");
+                    tempNode=tempNode.next;
+                }
+                Console.Write("\n");
             }
-            Console.Write("\n");
         }
 
         public void reversePrintDLL(){
@@ -114,7 +118,48 @@ namespace DSA
         }
 
         public void deleteNode(int location){
-            
+            if(head==null){
+                Console.WriteLine("The DLL is not exist!");
+            }else if(location ==0){
+                Node tempNode = head;
+                head = tempNode.next;
+                head.prev = null;
+                size--;
+                if(size ==0){
+                    head=null;
+                    tail.next = null;
+                    tail=null;
+                }
+            }else if(location>=size-1){
+                Node tempNode = tail.prev;
+                tempNode.next = null;
+                tail = tempNode;
+                size--;
+            }else{
+                Node tempNode = head;
+                for(int i=0;i<location-1;i++){
+                    tempNode = tempNode.next;
+                }
+                tempNode.next = tempNode.next.next;
+                tempNode.next.prev = tempNode;
+                size--;
+            }
+        }
+
+        public void deleteDLL(){
+            if(head==null){
+                Console.WriteLine("The DLL does not exist!");
+            }else{
+                Node tempNode = head.next;
+                for(int i=0; i<size-1;i++){
+                    tempNode.prev = null;
+                    tempNode = tempNode.next;
+                }
+                size=0;
+                head = null;
+                tail = null;
+            }
+
         }
     }
 }

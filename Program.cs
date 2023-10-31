@@ -179,5 +179,8 @@ class Hello{
         Console.WriteLine("Index next-value: "+dll.getNode(3).next.value);
         dll.searchNode(5);
         dll.searchNode(120);
+        dll.deleteNode(1); dll.printDLL();
+        dll.deleteDLL();
+        dll.printDLL();
     }      
 }
