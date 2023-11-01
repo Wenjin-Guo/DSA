@@ -159,10 +159,13 @@ class Hello{
         Console.WriteLine("tail value: "+csll.tail.value);
         Console.WriteLine("size value: "+csll.size); */
 
-        DoublyLinkedList dll = new DoublyLinkedList();
+        /* DoublyLinkedList dll = new DoublyLinkedList();
         dll.createDoublyLinkedList(1);
         dll.insertInDLL(2,1);
         dll.insertInDLL(0,0);
+        dll.printDLL();
+        dll.insertInDLL(0,1);
+        dll.printDLL();
         dll.insertInDLL(3,3);
         dll.insertInDLL(4,4);
         dll.insertInDLL(6,6);
@@ -181,6 +184,19 @@ class Hello{
         dll.searchNode(120);
         dll.deleteNode(1); dll.printDLL();
         dll.deleteDLL();
-        dll.printDLL();
+        dll.printDLL(); */
+
+        CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
+        cdll.createCDLL(1);
+        cdll.insertInCDLL(3,1);
+        cdll.printCDLL();
+        cdll.insertInCDLL(2,1);
+        cdll.printCDLL();
+        cdll.insertInCDLL(0,0);
+        cdll.insertInCDLL(8,3);
+        cdll.insertInCDLL(0,0);
+        cdll.insertInCDLL(0,0);
+        cdll.insertInCDLL(0,0);
+        cdll.printCDLL();
     }      
 }
