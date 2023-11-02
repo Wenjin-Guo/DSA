@@ -159,8 +159,21 @@ namespace DSA
                 nextNode.next.prev = tempNode;
                 size--;
             }
-            
-            
+        }
+
+        public void deleteCDLL(){
+            if(head==null){
+                Console.WriteLine("The DLL does not exist!");
+            }else{
+                Node tempNode = head.next;
+                for(int i=0; i<size-1;i++){
+                    tempNode.prev = null;
+                    tempNode = tempNode.next;
+                }
+                size=0;
+                head = null;
+                tail = null;
+            }
         }
     }
 }
