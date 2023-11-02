@@ -32,7 +32,7 @@ namespace DSA
                 nn.next = head;
                 head = nn;
                 tail.next = nn;
-            }else if(location >= size-1){  // insert at end of the node
+            }else if(location >= size){  // insert at end of the node
                 tail.next = nn;
                 tail = nn;
                 nn.next = head;

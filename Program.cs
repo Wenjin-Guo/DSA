@@ -139,7 +139,9 @@ class Hello{
 
         /* CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
         csll.createCSLL(1);
-        csll.insertInCSLL(2,1); 
+        csll.deleteNode(0);
+        csll.printCSLL(); */
+        /* csll.insertInCSLL(2,1); 
         csll.insertInCSLL(3,2);
         csll.insertInCSLL(4,3);
         csll.insertInCSLL(5,4);
@@ -159,9 +161,11 @@ class Hello{
         Console.WriteLine("tail value: "+csll.tail.value);
         Console.WriteLine("size value: "+csll.size); */
 
-        /* DoublyLinkedList dll = new DoublyLinkedList();
+        DoublyLinkedList dll = new DoublyLinkedList();
         dll.createDoublyLinkedList(1);
-        dll.insertInDLL(2,1);
+        dll.deleteNode(6);
+        dll.printDLL();
+        /* dll.insertInDLL(2,1);
         dll.insertInDLL(0,0);
         dll.printDLL();
         dll.insertInDLL(0,1);
@@ -183,20 +187,31 @@ class Hello{
         dll.searchNode(5);
         dll.searchNode(120);
         dll.deleteNode(1); dll.printDLL();
+        dll.deleteNode(6); dll.printDLL();
+        dll.deleteNode(3); dll.printDLL();
         dll.deleteDLL();
         dll.printDLL(); */
 
-        CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
+        /* CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
         cdll.createCDLL(1);
-        cdll.insertInCDLL(3,1);
+        cdll.deleteNode(5);
+        cdll.printCDLL(); */
+        /* cdll.insertInCDLL(3,1);
         cdll.printCDLL();
         cdll.insertInCDLL(2,1);
         cdll.printCDLL();
         cdll.insertInCDLL(0,0);
-        cdll.insertInCDLL(8,3);
-        cdll.insertInCDLL(0,0);
-        cdll.insertInCDLL(0,0);
-        cdll.insertInCDLL(0,0);
         cdll.printCDLL();
+        cdll.insertInCDLL(8,3);
+        cdll.insertInCDLL(10,4);
+        cdll.printCDLL();
+        cdll.insertInCDLL(0,0);
+        cdll.insertInCDLL(0,0);
+        Console.WriteLine(cdll.head.next.prev.value);
+        Console.WriteLine(cdll.tail.next.value);
+        cdll.printCDLL();
+        Console.WriteLine(cdll.getNode(5).value);
+        Console.WriteLine(cdll.getNode(5).next.value);
+        Console.WriteLine(cdll.getNode(5).prev.value); */
     }      
 }

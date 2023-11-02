@@ -27,19 +27,20 @@ namespace DSA
             nn.value = nodeValue;
             if(head==null){
                 createCDLL(nodeValue);
+                return;
             }else if(location==0){                   //insert at the beginning
                 nn.next = head;
-                head = nn;
                 nn.prev = tail;
-                nn.next.prev = nn;
-                nn.prev.next = nn;
+                head.prev = nn;
+                tail.next = nn;
+                head = nn;
                 size++;
             }else if(location>=size){              //insert at the end
                 nn.next = head;
+                head.prev = nn;
                 tail.next = nn;
                 nn.prev = tail;
                 tail = nn;
-                nn.next.prev = nn;
                 size++;
             }else{                                   //insert in the middle
                 Node tempNode = head;
@@ -48,9 +49,9 @@ namespace DSA
                 }
                 Node nextNode = tempNode.next;
                 nn.next = nextNode;
+                nextNode.prev = nn;
                 tempNode.next = nn;
                 nn.prev = tempNode;
-                nn.next.prev = nn;
                 size++;
             }
         }
@@ -118,6 +119,48 @@ namespace DSA
             }
             Console.WriteLine("The Node is NOT found");
             return false;
+        }
+
+        public void deleteNode(int location){
+            if(head==null){
+                Console.WriteLine("The CDLL does not exist!");
+                return;
+            }else if(location==0){          // delete at the beginning
+                if(size==1){
+                    head.next=null;
+                    head.prev=null;
+                    head=tail=null;
+                    size--;
+                }
+                Node tempNode = head;
+                head = tempNode.next;
+                head.prev = tail;
+                tail.next = head;
+                size--;
+            }else if(location>=size-1){      //delete at the end
+                if(size==1){
+                    head.next=null;
+                    head.prev=null;
+                    head=tail=null;
+                    size--;
+                }else{
+                    tail.prev.next = head;
+                    head.prev = tail.prev;
+                    tail = tail.prev;
+                    size--;
+                }
+            }else{                          //delete in the middle
+                Node tempNode = head;
+                for(int i=0;i<location-1;i++){
+                    tempNode=tempNode.next;
+                }
+                Node nextNode = tempNode.next;
+                tempNode.next = nextNode.next;
+                nextNode.next.prev = tempNode;
+                size--;
+            }
+            
+            
         }
     }
 }

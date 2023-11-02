@@ -117,25 +117,34 @@ namespace DSA
             return false;
         }
 
-        public void deleteNode(int location){
+        public void deleteNode(int location){     //use index
             if(head==null){
                 Console.WriteLine("The DLL is not exist!");
-            }else if(location ==0){
-                Node tempNode = head;
-                head = tempNode.next;
-                head.prev = null;
-                size--;
-                if(size ==0){
+                return;              /////////need to work on when size=1
+            }else if(location ==0){             //delete the first node
+                if(size==1){
                     head=null;
-                    tail.next = null;
                     tail=null;
+                    size--;
+                }else{
+                    Node tempNode = head;
+                    head = tempNode.next;
+                    head.prev = null;
+                    size--;
+                };
+            }else if(location>=size-1){        //delete the last node
+                if(size==1){
+                    head.next=null;
+                    head.prev=null;
+                    head=tail=null;
+                    size--;
+                }else{
+                    Node tempNode = tail.prev;
+                    tempNode.next = null;
+                    tail = tempNode;
+                    size--;
                 }
-            }else if(location>=size-1){
-                Node tempNode = tail.prev;
-                tempNode.next = null;
-                tail = tempNode;
-                size--;
-            }else{
+            }else{                              //delete in the middle
                 Node tempNode = head;
                 for(int i=0;i<location-1;i++){
                     tempNode = tempNode.next;
