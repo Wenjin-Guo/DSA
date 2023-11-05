@@ -22,7 +22,7 @@ namespace DSA
             //return head;
         }
 
-        public void add(int nodeValue){
+        public void add(int nodeValue){    //add at the end of list
             Node nn = new Node();
             nn.value = nodeValue;
             nn.next = null;

@@ -118,6 +118,10 @@ class Hello{
         linkedList.printSinglyLinkedList();
         linkedList.deleteNode(10);
         linkedList.printSinglyLinkedList();
+        linkedList.deleteNode(2);
+        linkedList.printSinglyLinkedList();
+        linkedList.deleteNode(2);
+        linkedList.printSinglyLinkedList();
         Console.WriteLine("\nTail value: "+linkedList.tail.value);
         Console.WriteLine("Head Value: "+linkedList.head.value);
         Console.WriteLine("Size: "+linkedList.size); */
@@ -192,7 +196,7 @@ class Hello{
         dll.deleteDLL();
         dll.printDLL(); */
 
-        CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
+        /* CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
         cdll.createCDLL(1);
         cdll.deleteCDLL();
         cdll.printCDLL();
@@ -216,6 +220,22 @@ class Hello{
         cdll.printCDLL();
         Console.WriteLine(cdll.getNode(4).value);
         Console.WriteLine(cdll.getNode(-1).next.value);
-        Console.WriteLine(cdll.getNode(4).prev.value);
+        Console.WriteLine(cdll.getNode(4).prev.value); */
+
+        SinglyLinkedList sll = new SinglyLinkedList();
+        UseLinkedList ull = new UseLinkedList();
+        sll.createSinglyLinkedList(1);
+        sll.add(2);
+        sll.add(1);
+        sll.add(3);
+        sll.add(4);
+        sll.add(6);
+        sll.add(2);
+        sll.add(4);
+        sll.add(4);
+        sll.add(7);
+        sll.printSinglyLinkedList();
+        Console.WriteLine("head value: "+ sll.head.value);
+        ull.deletDups(sll);
     }      
 }
