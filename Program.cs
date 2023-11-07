@@ -222,7 +222,7 @@ class Hello{
         Console.WriteLine(cdll.getNode(-1).next.value);
         Console.WriteLine(cdll.getNode(4).prev.value); */
 
-        SinglyLinkedList sll = new SinglyLinkedList();
+        /* SinglyLinkedList sll = new SinglyLinkedList();
         UseLinkedList ull = new UseLinkedList();
         sll.createSinglyLinkedList(1);
         sll.add(2);
@@ -236,6 +236,19 @@ class Hello{
         sll.add(7);
         sll.printSinglyLinkedList();
         Console.WriteLine("head value: "+ sll.head.value);
-        ull.deletDups(sll);
+        ull.deletDups(sll); */
+
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        
+        UseLinkedList ull = new UseLinkedList();
+        ull.printLL(head);
+        head = ull.SwapPairs(head);
+        ull.printLL(head);
+
+        
     }      
 }

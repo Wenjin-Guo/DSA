@@ -36,5 +36,40 @@ namespace DSA
             }
             sll.printSinglyLinkedList();
         }
+
+        public ListNode SwapPairs(ListNode head) {
+            if(head==null || head.next==null){
+                return head;
+            }
+            
+            ListNode dummy = new ListNode(0);
+            dummy.next = head;
+            ListNode curr = head;
+            ListNode prev = dummy;
+            while(curr!=null && curr.next!=null){
+                ListNode nextPair = curr.next.next;
+                ListNode sec = curr.next;
+
+                //swap 1st and 2nd node in current pair
+                prev.next = sec;
+                sec.next = curr;
+                curr.next = nextPair;
+
+                //update the prev and curr in the next pair
+                prev = curr;
+                curr = nextPair;
+            }
+            return dummy.next;
+        }
+
+        public void printLL(ListNode head){
+            while (head != null)
+            {
+                Console.Write(head.val + " -> ");
+                head = head.next;
+            }
+            Console.WriteLine("None");
+        }
+
     }
 }
