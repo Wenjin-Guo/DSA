@@ -222,7 +222,7 @@ class Hello{
         Console.WriteLine(cdll.getNode(-1).next.value);
         Console.WriteLine(cdll.getNode(4).prev.value); */
 
-        /* SinglyLinkedList sll = new SinglyLinkedList();
+        SinglyLinkedList sll = new SinglyLinkedList();
         UseLinkedList ull = new UseLinkedList();
         sll.createSinglyLinkedList(1);
         sll.add(2);
@@ -236,18 +236,25 @@ class Hello{
         sll.add(7);
         sll.printSinglyLinkedList();
         Console.WriteLine("head value: "+ sll.head.value);
-        ull.deletDups(sll); */
+        ull.deletDups(sll);
+        ull.findNthLast(sll,2);
 
-        ListNode head = new ListNode(1);
+        /* ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
+        head.next.next.next.next = new ListNode(5); */
         
-        UseLinkedList ull = new UseLinkedList();
+        /* UseLinkedList  ull = new UseLinkedList();
+        ull.createLinkedList(1);
+        ull.add(2);
+        ull.add(3);
+        ull.add(4);
+        ull.add(5);
+        ListNode head = ull.head;
         ull.printLL(head);
-        head = ull.SwapPairs(head);
-        ull.printLL(head);
+        head = ull.SwapPairs(head);  //very import to reset the head
+        ull.printLL(head); */
 
         
     }      

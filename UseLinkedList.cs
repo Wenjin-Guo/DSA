@@ -7,6 +7,9 @@ namespace DSA
 {
     public class UseLinkedList
     {
+        public ListNode head;
+        public ListNode tail;
+        public int size;
         public void deletDups(SinglyLinkedList sll){
             //Write a method to remove duplicates from an unsorted linked list.
             //linkedList = 1->2->1->3
@@ -37,12 +40,38 @@ namespace DSA
             sll.printSinglyLinkedList();
         }
 
+        public void findNthLast(SinglyLinkedList  sll, int location){
+            Node tempNode = sll.head;
+            int index = sll.size - location;
+            for(int i=0; i<index;i++){
+                tempNode = tempNode.next;
+            }
+            Console.WriteLine(tempNode.value);
+        }
+
+        public void createLinkedList(int nodeValue){
+            //Node dummy = new Node();
+            ListNode node = new ListNode(nodeValue);
+            head = node;
+            tail = node;
+            size = 1;
+            //return head;
+        }
+
+        public void add(int nodeValue){    //add at the end of list
+            ListNode nn = new ListNode(nodeValue);
+            nn.next = null;
+            tail.next = nn;
+            tail = nn;
+            size++;
+        }
+
         public ListNode SwapPairs(ListNode head) {
             if(head==null || head.next==null){
                 return head;
             }
             
-            ListNode dummy = new ListNode(0);
+            ListNode dummy = new ListNode(0);   //create a dummy node at the beginning
             dummy.next = head;
             ListNode curr = head;
             ListNode prev = dummy;
