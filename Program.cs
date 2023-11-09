@@ -236,8 +236,9 @@ class Hello{
         sll.add(7);
         sll.printSinglyLinkedList();
         Console.WriteLine("head value: "+ sll.head.value);
-        ull.deletDups(sll);
-        ull.findNthLast(sll,2);
+        //ull.deletDups(sll);
+        Node head = ull.partition(sll,3);
+        ull.printLL(head);
 
         /* ListNode head = new ListNode(1);
         head.next = new ListNode(2);

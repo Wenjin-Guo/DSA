@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 
 namespace DSA
@@ -40,6 +42,29 @@ namespace DSA
             sll.printSinglyLinkedList();
         }
 
+        public Node partition(SinglyLinkedList ll, int x){
+            Node dummy = new Node();
+            dummy.next = ll.head;
+            Node curr = ll.head;
+            for(int i=0;i<ll.size;i++){
+                if(curr.value<x ){ // in the middle
+                    ll.deleteNode(i);
+                    ll.insertInLinkedList(curr.value,0);
+                }
+                curr = curr.next;
+            }
+            return dummy.next;
+        }
+
+        public void printLL(Node head){
+            while (head != null)
+            {
+                Console.Write(head.value + " -> ");
+                head = head.next;
+            }
+            Console.WriteLine("None");
+        }
+
         public void findNthLast(SinglyLinkedList  sll, int location){
             Node tempNode = sll.head;
             int index = sll.size - location;
@@ -67,6 +92,8 @@ namespace DSA
         }
 
         public ListNode SwapPairs(ListNode head) {
+            //LeetCode 24. Swap Nodes in Pairs
+            
             if(head==null || head.next==null){
                 return head;
             }
