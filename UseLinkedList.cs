@@ -56,6 +56,17 @@ namespace DSA
             return dummy.next;
         }
 
+        public ListNode partition(ListNode head, int x){
+            ListNode dummy = new ListNode(0);
+            dummy.next = head;
+            ListNode curr = head;
+            while(curr.next!=null){
+                
+                curr = curr.next;
+            }
+
+        }
+
         public void printLL(Node head){
             while (head != null)
             {
