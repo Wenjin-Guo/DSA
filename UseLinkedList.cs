@@ -42,7 +42,7 @@ namespace DSA
             sll.printSinglyLinkedList();
         }
 
-        public Node partition(SinglyLinkedList ll, int x){
+        public SinglyLinkedList partition(SinglyLinkedList ll, int x){
             Node dummy = new Node();
             dummy.next = ll.head;
             Node curr = ll.head;
@@ -53,18 +53,54 @@ namespace DSA
                 }
                 curr = curr.next;
             }
-            return dummy.next;
+            return ll;
         }
 
         public ListNode partition(ListNode head, int x){
-            ListNode dummy = new ListNode(0);
-            dummy.next = head;
-            ListNode curr = head;
-            while(curr.next!=null){
-                
-                curr = curr.next;
+            // Create dummy nodes to hold nodes less than x and nodes greater than or equal to x
+            ListNode beforeDummy = new ListNode(0);
+            ListNode afterDummy = new ListNode(0);
+
+            // Create pointers for the two partitions and initialize them to the dummy nodes
+            ListNode before = beforeDummy;
+            ListNode after = afterDummy;
+
+            // Create a pointer to traverse the original list, starting from the head
+            ListNode current = head;
+
+            // Traverse the original list
+            while (current != null)
+            {
+                // Check if the current node's value is less than x
+                if (current.val < x)
+                {
+                    // Append the current node to the "before" partition
+                    before.next = current;
+                    
+                    // Move the "before" pointer to the newly added node
+                    before = before.next;
+                }
+                else
+                {
+                    // Append the current node to the "after" partition
+                    after.next = current;
+
+                    // Move the "after" pointer to the newly added node
+                    after = after.next;
+                }
+
+                // Move to the next node in the original list
+                current = current.next;
             }
 
+            // Connect the two partitions by setting the next of the "before" pointer to the head of the "after" partition
+            before.next = afterDummy.next;
+
+            // Set the next of the "after" pointer to null to terminate the partitioned list
+            after.next = null;
+
+            // Return the head of the partitioned list (excluding the dummy node)
+            return beforeDummy.next;
         }
 
         public void printLL(Node head){

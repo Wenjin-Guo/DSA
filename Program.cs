@@ -222,7 +222,7 @@ class Hello{
         Console.WriteLine(cdll.getNode(-1).next.value);
         Console.WriteLine(cdll.getNode(4).prev.value); */
 
-        SinglyLinkedList sll = new SinglyLinkedList();
+        /* SinglyLinkedList sll = new SinglyLinkedList();
         UseLinkedList ull = new UseLinkedList();
         sll.createSinglyLinkedList(1);
         sll.add(2);
@@ -237,14 +237,19 @@ class Hello{
         sll.printSinglyLinkedList();
         Console.WriteLine("head value: "+ sll.head.value);
         //ull.deletDups(sll);
-        Node head = ull.partition(sll,3);
-        ull.printLL(head);
+        SinglyLinkedList head = ull.partition(sll,5);
+        sll.printSinglyLinkedList(); */
 
-        /* ListNode head = new ListNode(1);
+        ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5); */
+        head.next.next.next.next = new ListNode(5);
+        head.next.next.next.next.next = new ListNode(9);
+        head.next.next.next.next.next.next = new ListNode(2);
+        head.next.next.next.next.next.next.next =new ListNode(4);
+        head.next.next.next.next.next.next.next.next =new ListNode(7);
+        head.next.next.next.next.next.next.next.next.next =new ListNode(3);
         
         /* UseLinkedList  ull = new UseLinkedList();
         ull.createLinkedList(1);
@@ -257,6 +262,10 @@ class Hello{
         head = ull.SwapPairs(head);  //very import to reset the head
         ull.printLL(head); */
 
+        UseLinkedList ull = new UseLinkedList();
+        ull.printLL(head);
+        head = ull.partition(head,5);
+        ull.printLL(head);
         
     }      
 }
