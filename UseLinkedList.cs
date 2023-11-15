@@ -43,7 +43,7 @@ namespace DSA
         }
 
         public SinglyLinkedList partition(SinglyLinkedList ll, int x){
-            Node dummy = new Node();
+            /* Node dummy = new Node();
             dummy.next = ll.head;
             Node curr = ll.head;
             for(int i=0;i<ll.size;i++){
@@ -53,7 +53,26 @@ namespace DSA
                 }
                 curr = curr.next;
             }
-            return ll;
+            return ll; */
+            SinglyLinkedList beforeSLL = new SinglyLinkedList();
+            beforeSLL.createSinglyLinkedList(0);
+            SinglyLinkedList afterSLL = new SinglyLinkedList();
+            afterSLL.createSinglyLinkedList(0);
+            SinglyLinkedList before = beforeSLL;
+            SinglyLinkedList after = afterSLL;
+            Node current = ll.head;
+            while(current!=null){
+                if(current.value<x){
+                    before.add(current.value);
+                }else{
+                    after.add(current.value);
+                }
+                current = current.next;
+            }
+            before.tail.next = after.head.next;
+            before.tail = after.tail;
+            beforeSLL.deleteNode(0);
+            return beforeSLL;
         }
 
         public ListNode partition(ListNode head, int x){

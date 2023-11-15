@@ -238,8 +238,11 @@ class Hello{
         Console.WriteLine("head value: "+ sll.head.value);
         //ull.deletDups(sll);
         //SinglyLinkedList head = ull.partition(sll,5);
-        Node head = ull.SwapPairs(sll);
-        ull.printLL(head);
+        //Node head = ull.SwapPairs(sll);
+        //ull.printLL(head);
+        sll = ull.partition(sll,5);
+        sll.printSinglyLinkedList();
+
         /* ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
