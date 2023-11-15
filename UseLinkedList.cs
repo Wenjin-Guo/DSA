@@ -165,6 +165,33 @@ namespace DSA
             return dummy.next;
         }
 
+        public Node SwapPairs(SinglyLinkedList sll) {
+            //LeetCode 24. Swap Nodes in Pairs
+            
+            if(sll.head==null || sll.head.next==null){
+                return sll.head;
+            }
+            
+            Node dummy = new Node();   //create a dummy node at the beginning
+            dummy.next = sll.head;
+            Node curr = sll.head;
+            Node prev = dummy;
+            while(curr!=null && curr.next!=null){
+                Node nextPair = curr.next.next;
+                Node sec = curr.next;
+
+                //swap 1st and 2nd node in current pair
+                prev.next = sec;
+                curr.next = nextPair;
+                sec.next = curr;
+                
+                //update the prev and curr in the next pair
+                prev = curr;
+                curr = nextPair;
+            }
+            return dummy.next;
+        }
+
         public void printLL(ListNode head){
             while (head != null)
             {
@@ -173,6 +200,8 @@ namespace DSA
             }
             Console.WriteLine("None");
         }
+
+       
 
     }
 }
