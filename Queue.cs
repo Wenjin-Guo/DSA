@@ -36,26 +36,43 @@ namespace DSA
 
         public void enQueue(int value){
             if(isFull()){
-                Console.WriteLine("The queue is full");
+                Console.WriteLine("The queue is full.");
             }else if(isEmpty()){
                 beginingOfQueue=0;
                 topOfQueue++;
                 arr[topOfQueue] = value;
-                Console.WriteLine("Successfully inserted "+value+ " in the queue");
+                Console.WriteLine("Successfully inserted "+value+ " in the queue.");
             }else{
                 topOfQueue++;
                 arr[topOfQueue] = value;
-                Console.WriteLine("Successfully inserted "+value+ " in the queue");
+                Console.WriteLine("Successfully inserted "+value+ " in the queue.");
             }
         }
 
         public void deQueue(){
             if(isEmpty()){
-                Console.WriteLine("The Queue is empty");
+                Console.WriteLine("The Queue is empty.");
             }else{
-                int result;
-                
+                beginingOfQueue++;
+                if(beginingOfQueue>topOfQueue){
+                    beginingOfQueue = topOfQueue = -1;
+                }
+                Console.WriteLine("The first element in the Queue has deleted");
             }
+        }
+
+        public int peek(){
+            if(!isEmpty()){
+                return arr[beginingOfQueue];
+            }else{
+                Console.WriteLine("The Queue is empty.");
+                return -1;
+            }
+        }
+
+        public void deleteQueue(){
+            arr=null;
+            Console.WriteLine("The Queue is successfully deleted.");
         }
     }
 }

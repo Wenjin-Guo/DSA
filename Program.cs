@@ -222,7 +222,7 @@ class Hello{
         Console.WriteLine(cdll.getNode(-1).next.value);
         Console.WriteLine(cdll.getNode(4).prev.value); */
 
-        SinglyLinkedList sll = new SinglyLinkedList();
+        /* SinglyLinkedList sll = new SinglyLinkedList();
         UseLinkedList ull = new UseLinkedList();
         sll.createSinglyLinkedList(1);
         sll.add(2);
@@ -235,13 +235,13 @@ class Hello{
         sll.add(4);
         sll.add(7);
         sll.printSinglyLinkedList();
-        Console.WriteLine("head value: "+ sll.head.value);
+        Console.WriteLine("head value: "+ sll.head.value); */
         //ull.deletDups(sll);
         //SinglyLinkedList head = ull.partition(sll,5);
         //Node head = ull.SwapPairs(sll);
         //ull.printLL(head);
-        sll = ull.partition(sll,5);
-        sll.printSinglyLinkedList();
+        /* sll = ull.partition(sll,5);
+        sll.printSinglyLinkedList(); */
 
         /* ListNode head = new ListNode(1);
         head.next = new ListNode(2);
@@ -270,5 +270,16 @@ class Hello{
         head = ull.partition(head,5);
         ull.printLL(head); */
         
+
+        QueueLinkedList qll = new QueueLinkedList();
+        qll.enQueue(1);
+        qll.enQueue(2);
+        qll.enQueue(3);
+        qll.enQueue(4);
+        qll.enQueue(5);
+        qll.printQLL();
+        Console.WriteLine(qll.head.next.prev.value);
+        Console.WriteLine(qll.tail.next.next.value);
+        Console.WriteLine(qll.head.prev.prev.value);
     }      
 }
