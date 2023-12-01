@@ -23,9 +23,9 @@ namespace DSA
 
         public bool isEmpty(){
             if(head == null){
-                return false;
-            }else{
                 return true;
+            }else{
+                return false;
             }
         }
 
@@ -60,5 +60,31 @@ namespace DSA
                 Console.Write("\n");
             }
         }
+
+        public int? deQueue(){
+            if(isEmpty() == true){
+                Console.WriteLine("The Queue is empty.");
+                return null;
+            }else{
+                Console.WriteLine("The deQueued value is "+head.value);
+                int value = head.value;
+                head = head.next;
+                head.prev = tail;
+                tail.next = head;
+                size--;
+                return value;
+            }
+        }
+
+        public int? peek(){
+            if(isEmpty()==true){
+                Console.WriteLine("The Queue is empty.");
+                return null;
+            }else{
+                return head.value;
+            }
+        }
+
+        
     }
 }

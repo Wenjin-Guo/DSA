@@ -8,8 +8,8 @@ namespace DSA
     public class Queue
     {
         int[] arr;
-        int topOfQueue;
-        int beginingOfQueue;
+        int topOfQueue;  // keep track of index of the cells
+        int beginingOfQueue; //keep track of the first cell
 
         public Queue(int size){
             this.arr = new int[size];

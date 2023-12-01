@@ -278,8 +278,13 @@ class Hello{
         qll.enQueue(4);
         qll.enQueue(5);
         qll.printQLL();
-        Console.WriteLine(qll.head.next.prev.value);
+        Console.WriteLine(qll.head.value);
         Console.WriteLine(qll.tail.next.next.value);
         Console.WriteLine(qll.head.prev.prev.value);
+        int? result = qll.deQueue();
+        Console.WriteLine("dequeue value "+result);
+        int? result1 = qll.peek();
+        Console.WriteLine("The head value is "+result1);
+        qll.printQLL();
     }      
 }
