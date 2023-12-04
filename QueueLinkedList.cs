@@ -8,6 +8,7 @@ namespace DSA
 {
     public class QueueLinkedList
     {
+        //FIFO(first in first out)
         public Node head;
         public Node tail;
         public int size;
@@ -85,6 +86,10 @@ namespace DSA
             }
         }
 
-        
+        public void deleteQueue(){
+            head = null;
+            tail = null;
+            size = 0;
+        }
     }
 }

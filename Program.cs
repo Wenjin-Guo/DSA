@@ -271,7 +271,7 @@ class Hello{
         ull.printLL(head); */
         
 
-        QueueLinkedList qll = new QueueLinkedList();
+        /* QueueLinkedList qll = new QueueLinkedList();
         qll.enQueue(1);
         qll.enQueue(2);
         qll.enQueue(3);
@@ -285,6 +285,10 @@ class Hello{
         Console.WriteLine("dequeue value "+result);
         int? result1 = qll.peek();
         Console.WriteLine("The head value is "+result1);
-        qll.printQLL();
+        qll.printQLL(); */
+
+        Recursion rec = new Recursion();
+        Console.WriteLine(rec.factorial(8));
+        Console.WriteLine(rec.fibonacci());
     }      
 }

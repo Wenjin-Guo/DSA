@@ -8,6 +8,7 @@ namespace DSA
 {
     public class StackLinkedList
     {
+        //LIFO(last in first out)
         SinglyLinkedList ll;
 
         public StackLinkedList(){
