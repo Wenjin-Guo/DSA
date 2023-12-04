@@ -289,6 +289,9 @@ class Hello{
 
         Recursion rec = new Recursion();
         Console.WriteLine(rec.factorial(8));
-        Console.WriteLine(rec.fibonacci());
+        Console.WriteLine(rec.fibonacci(-5));
+        Console.WriteLine(Math.Max(3,2.5));
+        int[] arr = {2,4,5,7,8,9,9,2,1,23,23,345,34,1,6,555};
+        Console.WriteLine(rec.findMaxNumRec(arr));
     }      
 }
