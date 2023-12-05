@@ -58,5 +58,15 @@ namespace DSA
                 Math.Max(sampleArray[size-1],findMax(sampleArray,size-1));
             return findMax(sampleArray,size);
         }
+
+        public int sumOfDigits(int n){
+            if(n<0){
+                return 0;
+            }
+            if(n<10){
+                return n;
+            }
+            return n%10 +sumOfDigits(n/10);
+        }
     }
 }
