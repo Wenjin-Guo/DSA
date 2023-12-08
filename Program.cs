@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Collections.Generic;
 using DSA;
+using System.Linq.Expressions;
 
 class Hello{
     static void Main(string[] args){
@@ -295,7 +296,9 @@ class Hello{
         Console.WriteLine(rec.findMaxNumRec(arr));
         Console.WriteLine(3%10);
         Console.WriteLine(rec.sumOfDigits(50));
-        Console.WriteLine(rec.powerOfNumber(10,-2)); */
-        Console.WriteLine(rec.gcd(56,56));
+        Console.WriteLine(rec.powerOfNumber(10,-2));
+        Console.WriteLine(rec.gcd(56,56)); */
+        Console.WriteLine(rec.decimalToBinary(10));
+        Console.WriteLine(13/2);
     }      
 }

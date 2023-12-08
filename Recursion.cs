@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -97,6 +98,12 @@ namespace DSA
             int solution(int a, int b)=>b==0 ? a: solution(b,a%b); 
         }
 
-        
+        //convert decimal to binary
+        public int decimalToBinary(int a){
+            if(a==0){
+                return 0;
+            }
+            return a%2 + 10*decimalToBinary(a/2);
+        }
     }
 }
