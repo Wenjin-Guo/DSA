@@ -292,8 +292,10 @@ class Hello{
         Console.WriteLine(rec.fibonacci(-5));
         Console.WriteLine(Math.Max(3,2.5));
         int[] arr = {2,4,5,7,8,9,9,2,1,23,23,345,34,1,6,555};
-        Console.WriteLine(rec.findMaxNumRec(arr)); */
+        Console.WriteLine(rec.findMaxNumRec(arr));
         Console.WriteLine(3%10);
-        Console.WriteLine(rec.sumOfDigits(-50));
+        Console.WriteLine(rec.sumOfDigits(50));
+        Console.WriteLine(rec.powerOfNumber(10,-2)); */
+        Console.WriteLine(rec.gcd(56,56));
     }      
 }

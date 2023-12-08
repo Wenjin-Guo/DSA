@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
@@ -59,6 +61,7 @@ namespace DSA
             return findMax(sampleArray,size);
         }
 
+        //give a positive number return the sum of each digits in the number
         public int sumOfDigits(int n){
             if(n<0){
                 return 0;
@@ -68,5 +71,32 @@ namespace DSA
             }
             return n%10 +sumOfDigits(n/10);
         }
+
+        public double powerOfNumber(int baseNumber, int times){
+            double temp = 1/baseNumber;
+            if(times<0){
+                return temp*powerOfNumber(baseNumber,times+1);
+            }
+            if(times==0){
+                return 1;
+            }
+            return baseNumber * powerOfNumber(baseNumber,times-1);
+        }
+
+        //find the greatest common divisor
+        public int gcd(int a, int b){
+            if(a<=0||b<=0){
+                return -1;
+            }
+            if(a>=b){
+                return solution(a, b);
+            }
+            else{
+                return solution(b,a);
+            }
+            int solution(int a, int b)=>b==0 ? a: solution(b,a%b); 
+        }
+
+        
     }
 }
