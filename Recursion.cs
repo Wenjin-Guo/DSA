@@ -105,5 +105,15 @@ namespace DSA
             }
             return a%2 + 10*decimalToBinary(a/2);
         }
+
+        public int power(int baseNumber, int exponent){
+            if(exponent==0){
+                return 1;
+            }
+            if(exponent==1){
+                return baseNumber;
+            }
+            return baseNumber*power(baseNumber,exponent-1);
+        }
     }
 }

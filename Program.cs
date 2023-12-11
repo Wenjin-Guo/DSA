@@ -300,5 +300,6 @@ class Hello{
         Console.WriteLine(rec.gcd(56,56)); */
         Console.WriteLine(rec.decimalToBinary(10));
         Console.WriteLine(13/2);
+        Console.WriteLine(rec.power(-2,3));
     }      
 }
