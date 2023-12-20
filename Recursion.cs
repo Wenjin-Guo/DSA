@@ -11,6 +11,7 @@ namespace DSA
 {
     public class Recursion
     {
+        //factorial function which accpets a number and returns the factorial of that number
         public int factorial(int n){
             
             if(n<1){
@@ -115,5 +116,7 @@ namespace DSA
             }
             return baseNumber*power(baseNumber,exponent-1);
         }
+
+        
     }
 }
