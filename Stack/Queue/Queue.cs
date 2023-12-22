@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DSA
 {
-    public class Queue
+    public class Queue  //first in first out
     {
         int[] arr;
         int topOfQueue;  // keep track of index of the cells

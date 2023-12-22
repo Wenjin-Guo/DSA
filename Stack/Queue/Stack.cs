@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DSA
 {
-    public class Stack
+    public class Stack  //last in first out
     {
         int[] arr;
         int topOfStack;
