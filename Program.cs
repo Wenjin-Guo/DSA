@@ -303,9 +303,24 @@ class Hello{
         Console.WriteLine(13/2);
         Console.WriteLine(rec.power(-2,3)); */
 
-        //TreeNode tn = new TreeNode("Drinks");
+        TreeNode drinks = new TreeNode("Drinks");
+        TreeNode hot = new TreeNode("Hot");
+        TreeNode cold = new TreeNode("Cold");
+        TreeNode tea = new TreeNode("Tea");
+        TreeNode coffee = new TreeNode("Coffee");
+        TreeNode wine = new TreeNode("Wine");
+        TreeNode beer = new TreeNode("Beer");
+        drinks.children.Add(hot);
+        drinks.children.Add(cold);
+        hot.children.Add(tea);
+        hot.children.Add(coffee);
+        cold.children.Add(wine);
+        cold.children.Add(beer);
 
-        BinaryTreeLL BTLL = new BinaryTreeLL();
+        Console.Write(drinks.print(0));
+        drinks.PrintTree(drinks,"",true);
+
+        /* BinaryTreeLL BTLL = new BinaryTreeLL();
         BinaryNode N1 = new BinaryNode();
         N1.value = "N1";
         BinaryNode N2 = new BinaryNode();
@@ -332,9 +347,11 @@ class Hello{
         N3.right = N7;
         N4.left = N8;
         N4.right = N9;
-        BTLL.root = N1;
+        BTLL.root = N1; */
 
-        BTLL.inOrder(N1);
+        //BTLL.inOrder(N1);
+        //BTLL.preOrder(N1);
+        //BTLL.levelOrder();
 
     }      
 }

@@ -18,7 +18,7 @@ namespace DSA
             if(node==null){
                 return;
             }
-            Console.WriteLine(node.value+" ");
+            Console.Write(node.value+" ");
             preOrder(node.left);
             preOrder(node.right);
         }
@@ -29,7 +29,7 @@ namespace DSA
                 return;
             }
             inOrder(node.left);
-            Console.WriteLine(node.value+" ");
+            Console.Write(node.value+" ");
             inOrder(node.right);
         }
 
@@ -40,21 +40,28 @@ namespace DSA
             }
             postOrder(node.left);
             postOrder(node.right);
-            Console.WriteLine(node.value+ " ");
+            Console.Write(node.value+ " ");
         }
 
         //levelOrder Traversal: 
         public void levelOrder(){
             Queue<BinaryNode> queue = new Queue<BinaryNode>();
             queue.Enqueue(root);
-            while(queue.Peek()!=null){
+            while(queue.Any()){
                 BinaryNode presentNode = queue.Dequeue();
-                Console.WriteLine(presentNode.value+" ");
-                //if
+                Console.Write(presentNode.value+" ");
+                if(presentNode.left!=null){
+                    queue.Enqueue(presentNode.left);
+                }
+                if(presentNode.right!=null){
+                    queue.Enqueue(presentNode.right);
+                }
             }
             /* Console.WriteLine(node.value+" ");
             levelOrder(node.left);
             levelOrder(node.right); */
         }
+
+        
     }
 }
