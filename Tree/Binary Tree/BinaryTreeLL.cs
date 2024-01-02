@@ -62,6 +62,22 @@ namespace DSA
             levelOrder(node.right); */
         }
 
-        
+        public void searchNode(String value){
+            Queue<BinaryNode> queue = new Queue<BinaryNode>();
+            queue.Enqueue(root);
+            while(queue.Any()){
+                BinaryNode presentNode = queue.Dequeue();
+                if(presentNode.value==value){
+                    Console.WriteLine("Found "+value);
+                }
+                if(presentNode.left!=null){
+                    queue.Enqueue(presentNode.left);
+                }
+                if(presentNode.right!=null){
+                    queue.Enqueue(presentNode.right);
+                }
+            }
+            Console.WriteLine("The value does NOT find in the tree.");
+        }
     }
 }
