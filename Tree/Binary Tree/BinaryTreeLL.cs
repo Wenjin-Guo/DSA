@@ -62,22 +62,53 @@ namespace DSA
             levelOrder(node.right); */
         }
 
+        //use levelOrder traversal do the search function
         public void searchNode(String value){
             Queue<BinaryNode> queue = new Queue<BinaryNode>();
             queue.Enqueue(root);
             while(queue.Any()){
                 BinaryNode presentNode = queue.Dequeue();
                 if(presentNode.value==value){
-                    Console.WriteLine("Found "+value);
+                    Console.WriteLine("Found "+value+ " in the tree.");
+                    return;
+                }else{
+                    if(presentNode.left!=null){
+                        queue.Enqueue(presentNode.left);
+                    }
+                    if(presentNode.right!=null){
+                        queue.Enqueue(presentNode.right);
+                    }
                 }
-                if(presentNode.left!=null){
+            }
+            Console.WriteLine("The value does NOT found in the tree.");
+        }
+
+        //Insert method
+        public void insertNode(String value){
+            BinaryNode newNode = new BinaryNode();
+            newNode.value = value;
+            if(root==null){
+                root = newNode;
+                Console.WriteLine("Inserted new node at Root");
+                return;
+            }
+            Queue<BinaryNode> queue = new Queue<BinaryNode>();
+            queue.Enqueue(root);
+            while(queue.Any()){
+                BinaryNode presentNode = queue.Dequeue();
+                if(presentNode.left == null){
+                    presentNode.left = newNode;
+                    Console.WriteLine("Successfully inserted");
+                    break;
+                }else if(presentNode.right==null){
+                    presentNode.right = newNode;
+                    Console.WriteLine("Successfully inserted");
+                    break;
+                }else{     //continue to loop through the nodes in the tree
                     queue.Enqueue(presentNode.left);
-                }
-                if(presentNode.right!=null){
                     queue.Enqueue(presentNode.right);
                 }
             }
-            Console.WriteLine("The value does NOT find in the tree.");
         }
     }
 }
