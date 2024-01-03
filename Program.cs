@@ -351,7 +351,7 @@ class Hello{
 
         //BTLL.inOrder(N1);
         //BTLL.preOrder(N1);
-        //BTLL.levelOrder();
+        BTLL.levelOrder();
         BTLL.searchNode("N10");
 
     }      

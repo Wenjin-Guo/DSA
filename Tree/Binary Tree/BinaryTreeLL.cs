@@ -57,6 +57,7 @@ namespace DSA
                     queue.Enqueue(presentNode.right);
                 }
             }
+            Console.WriteLine();
             /* Console.WriteLine(node.value+" ");
             levelOrder(node.left);
             levelOrder(node.right); */
