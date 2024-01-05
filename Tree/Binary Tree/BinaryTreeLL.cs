@@ -111,5 +111,43 @@ namespace DSA
                 }
             }
         }
+
+        //get deepest node in the tree
+        public BinaryNode getDeepestNode(){
+            Queue<BinaryNode> queue = new Queue<BinaryNode>();
+            queue.Enqueue(root);
+            BinaryNode presentNode = null;
+            while(queue.Any()){
+                presentNode = queue.Dequeue();
+                if(presentNode.left != null){
+                    queue.Enqueue(presentNode.left);
+                }
+                if(presentNode.right != null){
+                    queue.Enqueue(presentNode.right);
+                }
+            }
+            return presentNode;
+        }
+
+        //delete deepest node
+        public void deleteDeepestNode(){
+            Queue<BinaryNode> queue = new Queue<BinaryNode>();
+            queue.Enqueue(root);
+            BinaryNode presentNode  = null;
+            BinaryNode previousNode = null;
+            while(queue.Any()){
+                previousNode = presentNode;
+                presentNode = queue.Dequeue();
+                if(presentNode.left == null){
+                    previousNode.right=null;
+                    return;
+                }else if(presentNode.right == null){
+                    previousNode.left = null;
+                    return;
+                }
+                queue.Enqueue(presentNode.left);
+                queue.Enqueue(presentNode.right);
+            }
+        }
     }
 }

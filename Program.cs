@@ -353,6 +353,10 @@ class Hello{
         //BTLL.preOrder(N1);
         BTLL.levelOrder();
         BTLL.searchNode("N10");
-
+        BTLL.insertNode("N10");BTLL.insertNode("N11");BTLL.insertNode("N12");
+        BTLL.levelOrder();
+        //Console.WriteLine(BTLL.getDeepestNode().value);
+        BTLL.deleteDeepestNode();
+        BTLL.levelOrder();
     }      
 }
