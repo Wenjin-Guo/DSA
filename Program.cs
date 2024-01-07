@@ -358,5 +358,7 @@ class Hello{
         Console.WriteLine(BTLL.getDeepestNode().value);
         BTLL.deleteDeepestNode();
         BTLL.levelOrder();
+        BTLL.deleteNode("N1");
+        BTLL.levelOrder();
     }      
 }

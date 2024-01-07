@@ -149,5 +149,24 @@ namespace DSA
                 queue.Enqueue(presentNode.right);
             }
         }
+
+        //delete given node
+        public void deleteNode(String value){
+            Queue<BinaryNode> queue = new Queue<BinaryNode>();
+            queue.Enqueue(root);
+            while(queue.Any()){
+                BinaryNode presentNode = queue.Dequeue();
+                if(presentNode.value == value){
+                    presentNode.value = getDeepestNode().value;
+                    deleteDeepestNode();
+                    Console.WriteLine("The node is deleted");
+                    return;
+                }else{
+                    if(presentNode.left!=null) queue.Enqueue(presentNode.left);
+                    if(presentNode.right!=null) queue.Enqueue(presentNode.right);
+                }
+            }
+            Console.WriteLine("The node does not exist in this BT");
+        }
     }
 }
