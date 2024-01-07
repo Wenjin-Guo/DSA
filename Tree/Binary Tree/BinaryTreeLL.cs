@@ -168,5 +168,11 @@ namespace DSA
             }
             Console.WriteLine("The node does not exist in this BT");
         }
+
+        //delete Bianry Tree
+        public void deleteBT(){
+            root = null;
+            Console.WriteLine("BT has successfully deleted.");
+        }
     }
 }
