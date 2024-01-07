@@ -355,7 +355,7 @@ class Hello{
         BTLL.searchNode("N10");
         BTLL.insertNode("N10");BTLL.insertNode("N11");BTLL.insertNode("N12");
         BTLL.levelOrder();
-        //Console.WriteLine(BTLL.getDeepestNode().value);
+        Console.WriteLine(BTLL.getDeepestNode().value);
         BTLL.deleteDeepestNode();
         BTLL.levelOrder();
     }      

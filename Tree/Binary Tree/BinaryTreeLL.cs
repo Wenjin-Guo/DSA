@@ -142,7 +142,7 @@ namespace DSA
                     previousNode.right=null;
                     return;
                 }else if(presentNode.right == null){
-                    previousNode.left = null;
+                    presentNode.left = null;
                     return;
                 }
                 queue.Enqueue(presentNode.left);
