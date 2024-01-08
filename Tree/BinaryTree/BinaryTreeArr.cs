@@ -54,7 +54,7 @@ namespace DSA
 
         //preOrder Traversal
         public void preOrder(int index){
-            if(index>=arr.Length||arr[index]==null||index<0){
+            if(index>=lastUsedIndex||index<0){
                 return;
             }else{
                 Console.Write(arr[index]+" ");
@@ -74,6 +74,15 @@ namespace DSA
             }
         }
 
-        
+        //postOrder Traversal
+        public void postOrder(int index){
+            if(index>=arr.Length||arr[index]==null||index<0){
+                return;
+            }else{
+                postOrder(2*index+1);
+                postOrder(2*index+2);
+                Console.Write(arr[index]+" ");
+            }
+        }
     }
 }
