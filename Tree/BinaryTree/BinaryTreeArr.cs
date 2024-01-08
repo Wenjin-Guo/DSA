@@ -26,15 +26,18 @@ namespace DSA
         }
 
         //insert method
+        //index start from 0
+        //left child = 2*index+1
+        //right child = 2*index+2
         public void insert(String value){
             if(!isFull()){
-                arr[lastUsedIndex+1] = value;
+                arr[lastUsedIndex] = value;
                 lastUsedIndex++;
                 Console.WriteLine("The value of "+value+ " has been inserted");
             }else{
                 Console.WriteLine("The BT is full");
                 extendCapacity();
-                arr[lastUsedIndex+1] = value;
+                arr[lastUsedIndex] = value;
                 lastUsedIndex++;
                 Console.WriteLine("The BT capacity has extended, and the value of "+value+ " has been inserted");
             }
@@ -47,6 +50,17 @@ namespace DSA
                 temp[i] = arr[i];
             }
             arr=temp;
+        }
+
+        //preOrder Traversal
+        public void preOrder(int index){
+            if(index>lastUsedIndex||index<0){
+                return;
+            }else{
+                Console.Write(arr[index]+" ");
+                preOrder(2*index+1);
+                preOrder(2*index+2);
+            }
         }
     }
 }

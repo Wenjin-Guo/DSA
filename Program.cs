@@ -368,5 +368,9 @@ class Hello{
         btarr.insert("N4");
         btarr.insert("N5");
         btarr.insert("N6");
+        btarr.insert("N7");
+        btarr.insert("N8");
+        btarr.insert("N9");
+        btarr.preOrder(0);
     }      
 }
