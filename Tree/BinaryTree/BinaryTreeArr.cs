@@ -84,5 +84,12 @@ namespace DSA
                 Console.Write(arr[index]+" ");
             }
         }
+
+        //levelOrder Traversal
+        public void levelOrder(){
+            for(int i=0;i<arr.Length;i++){
+                Console.Write(arr[i]+" ");
+            }
+        }
     }
 }

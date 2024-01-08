@@ -376,5 +376,7 @@ class Hello{
         btarr.inOrder(0);
         Console.WriteLine();
         btarr.postOrder(0);
+        Console.WriteLine();
+        btarr.levelOrder();
     }      
 }
