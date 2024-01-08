@@ -11,7 +11,7 @@ namespace DSA
         int lastUsedIndex{get;set;}
 
         public BinaryTreeArr(int size){
-            arr = new string[size+1];
+            arr = new string[size];
             this.lastUsedIndex = 0;
             Console.WriteLine("Blank Tree of size "+size+" has been created");
         }
@@ -54,7 +54,7 @@ namespace DSA
 
         //preOrder Traversal
         public void preOrder(int index){
-            if(index>lastUsedIndex||index<0){
+            if(index>=arr.Length||arr[index]==null||index<0){
                 return;
             }else{
                 Console.Write(arr[index]+" ");
@@ -62,5 +62,18 @@ namespace DSA
                 preOrder(2*index+2);
             }
         }
+
+        //inOrder Traversal
+        public void inOrder(int index){
+            if(index>=arr.Length||arr[index]==null||index<0){
+                return;
+            }else{
+                inOrder(2*index+1);
+                Console.Write(arr[index]+" ");
+                inOrder(2*index+2);
+            }
+        }
+
+        
     }
 }

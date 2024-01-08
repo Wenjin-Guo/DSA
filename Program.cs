@@ -372,5 +372,7 @@ class Hello{
         btarr.insert("N8");
         btarr.insert("N9");
         btarr.preOrder(0);
+        Console.WriteLine();
+        btarr.inOrder(0);
     }      
 }
