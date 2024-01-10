@@ -378,5 +378,10 @@ class Hello{
         btarr.postOrder(0);
         Console.WriteLine();
         btarr.levelOrder();
+        Console.WriteLine();
+        btarr.searchNode("N4");
+        btarr.deleteNode("N3");
+        btarr.levelOrder();
+        Console.WriteLine();
     }      
 }

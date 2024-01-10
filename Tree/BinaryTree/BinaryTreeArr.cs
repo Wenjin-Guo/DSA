@@ -7,8 +7,8 @@ namespace DSA
 {
     public class BinaryTreeArr
     {
-        String[] arr {get;set;}
-        int lastUsedIndex{get;set;}
+        public String[] arr {get;set;}
+        public int lastUsedIndex{get;set;}
 
         public BinaryTreeArr(int size){
             arr = new string[size];
@@ -87,9 +87,35 @@ namespace DSA
 
         //levelOrder Traversal
         public void levelOrder(){
-            for(int i=0;i<arr.Length;i++){
+            for(int i=0;i<lastUsedIndex;i++){
                 Console.Write(arr[i]+" ");
             }
+        }
+
+        //use levelOrder traversal to do the search 
+        public int searchNode(String value){
+            for(int i=0;i<lastUsedIndex;i++){
+                if(arr[i]==value){
+                    Console.WriteLine(value+" exists at the location: "+i);
+                    return i;
+                }
+            }
+            Console.WriteLine("The value does not exist in BT.");
+            return -1;
+        }
+
+        //use levelOrder traversal find the location of the value to delete, and swap with the deepest node, then delete the deepest node
+        public void deleteNode(String value){
+            for(int i=0;i<lastUsedIndex;i++){
+                if(arr[i]==value){
+                    (arr[i],arr[lastUsedIndex-1])=(arr[lastUsedIndex-1],arr[i]);
+                    arr[lastUsedIndex-1]=null;
+                    lastUsedIndex--;
+                    Console.WriteLine(value+" deleted in the BT");
+                    return;
+                }
+            }
+            Console.WriteLine(value+" does not exists in the BT");
         }
     }
 }
