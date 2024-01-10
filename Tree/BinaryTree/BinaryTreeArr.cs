@@ -7,12 +7,12 @@ namespace DSA
 {
     public class BinaryTreeArr
     {
-        public String[] arr {get;set;}
-        public int lastUsedIndex{get;set;}
+        String[] arr {get;set;}
+        int lastUsedIndex{get;set;}
 
         public BinaryTreeArr(int size){
             arr = new string[size];
-            this.lastUsedIndex = 0;
+            this.lastUsedIndex = -1;
             Console.WriteLine("Blank Tree of size "+size+" has been created");
         }
         
@@ -31,14 +31,14 @@ namespace DSA
         //right child = 2*index+2
         public void insert(String value){
             if(!isFull()){
-                arr[lastUsedIndex] = value;
                 lastUsedIndex++;
+                arr[lastUsedIndex] = value;
                 Console.WriteLine("The value of "+value+ " has been inserted");
             }else{
                 Console.WriteLine("The BT is full");
                 extendCapacity();
-                arr[lastUsedIndex] = value;
                 lastUsedIndex++;
+                arr[lastUsedIndex] = value;
                 Console.WriteLine("The BT capacity has extended, and the value of "+value+ " has been inserted");
             }
         }
@@ -87,14 +87,14 @@ namespace DSA
 
         //levelOrder Traversal
         public void levelOrder(){
-            for(int i=0;i<lastUsedIndex;i++){
+            for(int i=0;i<=lastUsedIndex;i++){
                 Console.Write(arr[i]+" ");
             }
         }
 
         //use levelOrder traversal to do the search 
         public int searchNode(String value){
-            for(int i=0;i<lastUsedIndex;i++){
+            for(int i=0;i<=lastUsedIndex;i++){
                 if(arr[i]==value){
                     Console.WriteLine(value+" exists at the location: "+i);
                     return i;
@@ -106,16 +106,26 @@ namespace DSA
 
         //use levelOrder traversal find the location of the value to delete, and swap with the deepest node, then delete the deepest node
         public void deleteNode(String value){
-            for(int i=0;i<lastUsedIndex;i++){
+            for(int i=0;i<=lastUsedIndex;i++){
                 if(arr[i]==value){
-                    (arr[i],arr[lastUsedIndex-1])=(arr[lastUsedIndex-1],arr[i]);
-                    arr[lastUsedIndex-1]=null;
+                    (arr[i],arr[lastUsedIndex])=(arr[lastUsedIndex],arr[i]);
+                    arr[lastUsedIndex]=null;
                     lastUsedIndex--;
                     Console.WriteLine(value+" deleted in the BT");
                     return;
                 }
             }
             Console.WriteLine(value+" does not exists in the BT");
+        }
+
+        //delete entire BT
+        public void deleteBT(){
+            try{
+                arr=null;
+                Console.WriteLine("The BT has deleted.");
+            }catch(Exception e){
+                Console.WriteLine("There is an error deleting the tree.");
+            }    
         }
     }
 }

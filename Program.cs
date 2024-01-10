@@ -383,5 +383,6 @@ class Hello{
         btarr.deleteNode("N3");
         btarr.levelOrder();
         Console.WriteLine();
+        btarr.deleteBT();
     }      
 }
