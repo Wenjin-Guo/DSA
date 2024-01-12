@@ -400,5 +400,7 @@ class Hello{
         newBST.inOrder(newBST.root);
         Console.WriteLine();
         newBST.postOrder(newBST.root);
+        Console.WriteLine();
+        newBST.levelOrder();
     }      
 }

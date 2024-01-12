@@ -63,5 +63,21 @@ namespace DSA
             postOrder(node.right);
             Console.Write(node.value+" ");
         }
+
+        //levelOrder Traversal
+        public void levelOrder(){
+            Queue<BinarySearchNode> queue = new Queue<BinarySearchNode>();
+            queue.Enqueue(root);
+            while(queue.Any()){
+                BinarySearchNode presentNode = queue.Dequeue();
+                Console.Write(presentNode.value+" ");
+                if(presentNode.left!=null){
+                    queue.Enqueue(presentNode.left);
+                }
+                if(presentNode.right!=null){
+                    queue.Enqueue(presentNode.right);
+                }
+            }
+        }
     }
 }
