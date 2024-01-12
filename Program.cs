@@ -396,5 +396,9 @@ class Hello{
         newBST.insert(20);
         newBST.insert(40);
         newBST.preOrder(newBST.root);
+        Console.WriteLine();
+        newBST.inOrder(newBST.root);
+        Console.WriteLine();
+        newBST.postOrder(newBST.root);
     }      
 }

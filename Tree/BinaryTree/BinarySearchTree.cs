@@ -44,6 +44,24 @@ namespace DSA
             preOrder(node.right);
         }
 
+        //inOrder Traversal
+        public void inOrder(BinarySearchNode node){
+            if(node==null){
+                return;
+            }
+            inOrder(node.left);
+            Console.Write(node.value+" ");
+            inOrder(node.right);
+        }
 
+        //postOrder Traversal
+        public void postOrder(BinarySearchNode node){
+            if(node==null){
+                return;
+            }
+            postOrder(node.left);
+            postOrder(node.right);
+            Console.Write(node.value+" ");
+        }
     }
 }
