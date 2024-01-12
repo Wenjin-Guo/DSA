@@ -395,5 +395,6 @@ class Hello{
         newBST.insert(100);
         newBST.insert(20);
         newBST.insert(40);
+        newBST.preOrder(newBST.root);
     }      
 }

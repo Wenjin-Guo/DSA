@@ -8,7 +8,7 @@ namespace DSA
 {
     public class BinarySearchTree
     {
-        BinarySearchNode root{get;set;}
+        public BinarySearchNode root{get;set;}
 
         public BinarySearchTree(){
             this.root=null;
@@ -31,7 +31,17 @@ namespace DSA
         }
 
         public void insert(int value){
-            insert(root, value);
+            root=insert(root, value);
+        }
+
+        //preOrder traversal
+        public void preOrder(BinarySearchNode node){
+            if(node==null){
+                return;
+            }
+            Console.Write(node.value+" ");
+            preOrder(node.left);
+            preOrder(node.right);
         }
 
 
