@@ -361,7 +361,7 @@ class Hello{
         BTLL.deleteNode("N1");
         BTLL.levelOrder(); */
 
-        BinaryTreeArr btarr = new BinaryTreeArr(5);
+        /* BinaryTreeArr btarr = new BinaryTreeArr(5);
         btarr.insert("N1");
         btarr.insert("N2");
         btarr.insert("N3");
@@ -383,6 +383,17 @@ class Hello{
         btarr.deleteNode("N3");
         btarr.levelOrder();
         Console.WriteLine();
-        btarr.deleteBT();
+        btarr.deleteBT(); */
+
+        BinarySearchTree newBST = new BinarySearchTree();
+        newBST.insert(70);
+        newBST.insert(50);
+        newBST.insert(90);
+        newBST.insert(30);
+        newBST.insert(60);
+        newBST.insert(80);
+        newBST.insert(100);
+        newBST.insert(20);
+        newBST.insert(40);
     }      
 }
