@@ -79,5 +79,21 @@ namespace DSA
                 }
             }
         }
+
+        //search in binary search tree
+        public BinarySearchNode search(BinarySearchNode node, int value){
+            if(node==null){
+                Console.WriteLine("value "+value+" not found in BST");
+                return null;
+            }else if(node.value==value){
+                Console.WriteLine("value "+value+" found in BST");
+                return node;
+            }else if(value<node.value){
+                return search(node.left,value);
+            }else{
+                return search(node.right, value);
+            }
+
+        }
     }
 }

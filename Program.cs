@@ -402,5 +402,7 @@ class Hello{
         newBST.postOrder(newBST.root);
         Console.WriteLine();
         newBST.levelOrder();
+        Console.WriteLine();
+        newBST.search(newBST.root,40);
     }      
 }
