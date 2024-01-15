@@ -93,7 +93,26 @@ namespace DSA
             }else{
                 return search(node.right, value);
             }
-
         }
+
+        //Minimum node
+        public static BinarySearchNode minimumNode(BinarySearchNode root){
+            if(root.left==null){
+                return root;
+            }
+            return minimumNode(root.left);
+        }
+
+        //delete node in Binary search tree
+        /* public BinarySearchNode deleteNode(BinarySearchNode root,int value){
+            if(root==null){
+                Console.WriteLine("The BST is empty");
+                return null;
+            }
+            BinarySearchNode nodeToBeDeleted = search(root,value);
+            if(value<root.value){
+                root.left = deleteNode(root.left,value);
+            }
+        } */
     }
 }
