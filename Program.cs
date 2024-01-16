@@ -395,14 +395,17 @@ class Hello{
         newBST.insert(100);
         newBST.insert(20);
         newBST.insert(40);
-        newBST.preOrder(newBST.root);
+        /* newBST.preOrder(newBST.root);
         Console.WriteLine();
         newBST.inOrder(newBST.root);
         Console.WriteLine();
         newBST.postOrder(newBST.root);
-        Console.WriteLine();
+        Console.WriteLine(); */
         newBST.levelOrder();
         Console.WriteLine();
-        newBST.search(newBST.root,40);
+        //newBST.search(newBST.root,40);
+        newBST.deleteNode(newBST.root, 90);
+        newBST.levelOrder();
+        Console.WriteLine();
     }      
 }

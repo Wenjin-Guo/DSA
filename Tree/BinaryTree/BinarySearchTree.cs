@@ -104,15 +104,46 @@ namespace DSA
         }
 
         //delete node in Binary search tree
-        /* public BinarySearchNode deleteNode(BinarySearchNode root,int value){
-            if(root==null){
-                Console.WriteLine("The BST is empty");
+        //case1: no child
+        //case2: one child
+        //case3: 2 children : find min in right-subtree -> 
+        //                    copy the value in targetted node ->
+        //                    delete duplicate from right-subtree
+        //OR                  find max in left ->
+        //                    copy the value in targetted node ->
+        //                    delete duplicate from left-subtree
+        public BinarySearchNode deleteNode(BinarySearchNode root,int value){
+            if(root==null){   //base condition, no value found
+                Console.WriteLine("Value not found in BST");
                 return null;
-            }
-            BinarySearchNode nodeToBeDeleted = search(root,value);
-            if(value<root.value){
+            }else if(value<root.value){  //
                 root.left = deleteNode(root.left,value);
+            }else if(value>root.value){
+                root.right = deleteNode(root.right,value);
+            }else{ //Wohoo found the node, get ready to be deleted
+                //case 1:
+                if(root.left==null&& root.right==null){
+                    root = null;
+                }
+                //case 2:
+                else if(root.left==null){
+                    BinarySearchNode temp = root;
+                    root = root.right;
+                    temp = null;
+                }else if(root.right == null){
+                    BinarySearchNode temp = root;
+                    root = root.left;
+                    temp = null;
+                }
+                //case 3: 2 children
+                else{
+                    BinarySearchNode temp = minimumNode(root.right);
+                    root.value = temp.value;
+                    root.right = deleteNode(root.right,temp.value);
+                }
+
             }
-        } */
+            return root;
+        }
     }
 }
