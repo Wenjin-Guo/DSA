@@ -127,13 +127,9 @@ namespace DSA
                 }
                 //case 2:
                 else if(root.left==null){
-                    BinarySearchNode temp = root;
                     root = root.right;
-                    temp = null;
                 }else if(root.right == null){
-                    BinarySearchNode temp = root;
                     root = root.left;
-                    temp = null;
                 }
                 //case 3: 2 children
                 else{
@@ -144,6 +140,12 @@ namespace DSA
 
             }
             return root;
+        }
+
+        //delete BST
+        public void deleteBST(){
+            root = null;
+            Console.WriteLine("BST deleted successfully");
         }
     }
 }
