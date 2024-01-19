@@ -9,7 +9,11 @@ namespace DSA
     {
         public int value{get;set;}
         public int height{get;set;}
-        public AVLTree left{get;set;}
-        public AVLTree right{get;set;}
+        public AVLNode left{get;set;}
+        public AVLNode right{get;set;}
+
+        AVLNode(){
+            this.height=0;
+        }
     }
 }

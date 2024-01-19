@@ -74,8 +74,39 @@ namespace DSA
             }else{
                 return search(node.right,value);
             }
-                
-            
         }
+
+
+        //getHeight 
+        public int getHeight(AVLNode node){
+            if(node==null){
+                return 0;
+            }else{
+                return node.height;
+            }
+        }
+
+        //rotateRight
+        private AVLNode rotateRight(AVLNode disbalancedNode){
+            AVLNode newRoot = disbalancedNode.left;
+            disbalancedNode.left = disbalancedNode.left.right;
+            newRoot.right = disbalancedNode;
+            disbalancedNode.height = 1+Math.Max(getHeight(disbalancedNode.left),getHeight(disbalancedNode.right));
+            newRoot.height = 1+Math.Max(getHeight(newRoot.left),getHeight(newRoot.right));
+            return newRoot;
+        }
+
+        //rotateLeft
+        private AVLNode rotateLeft(AVLNode disbalancedNode){
+            AVLNode newRoot = disbalancedNode.right;
+            disbalancedNode.right = disbalancedNode.right.left;
+            newRoot.left  = disbalancedNode;
+            disbalancedNode.height = 1+Math.Max(getHeight(disbalancedNode.left),getHeight(disbalancedNode.right));
+            newRoot.height = 1+Math.Max(getHeight(newRoot.left),getHeight(newRoot.right));
+            return newRoot;
+        }
+
+        //insert method
+        //public 
     }
 }
