@@ -408,6 +408,13 @@ class Hello{
         newBST.levelOrder();
         Console.WriteLine(); */
 
-        
+        AVLTree newAVL = new AVLTree();
+        newAVL.insert(5);
+        newAVL.insert(10);
+        newAVL.insert(15);
+        newAVL.insert(20);
+        newAVL.levelOrder();
+        //newAVL.insert(5);
+
     }      
 }

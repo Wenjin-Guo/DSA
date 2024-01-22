@@ -12,7 +12,7 @@ namespace DSA
         public AVLNode left{get;set;}
         public AVLNode right{get;set;}
 
-        AVLNode(){
+        public AVLNode(){
             this.height=0;
         }
     }

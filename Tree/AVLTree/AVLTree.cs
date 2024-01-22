@@ -123,7 +123,37 @@ namespace DSA
                 newnode.value = value;
                 newnode.height=1;
                 return newnode;
+            }else if(value<node.value){
+                node.left = insertNode(node.left,value);
+            }else{
+                node.right = insertNode(node.right,value);
             }
+            node.height = 1+Math.Max(getHeight(node.left),getHeight(node.right));
+            int balance = getBalance(node);
+            //leftleft condition
+            if(balance>1 && value<node.left.value){
+                return rotateRight(node);
+            }
+            //leftRight condition
+            if(balance>1 && value>node.left.value){
+                node.left = rotateLeft(node.left);
+                return rotateRight(node);
+            }
+            //rightRight condition
+            if(balance<-1 && value>node.right.value){
+                return rotateLeft(node);
+            }
+            //rightLeft condition
+            if(balance <-1 && value<node.right.value){
+                node.right = rotateRight(node.right);
+                return rotateLeft(node);
+            }
+
+            return node;
         } 
+
+        public void insert(int value){
+            root = insertNode(root,value);
+        }
     }
 }
