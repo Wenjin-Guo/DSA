@@ -106,7 +106,24 @@ namespace DSA
             return newRoot;
         }
 
-        //insert method
-        //public 
+
+        //getBalance
+        public int getBalance(AVLNode node){
+            if(node==null){
+                return 0;
+            }
+            return getHeight(node.left)-getHeight(node.right);
+        }
+
+        
+        //insertNode method
+        private AVLNode insertNode(AVLNode node, int value){
+            if(node==null){
+                AVLNode newnode = new AVLNode();
+                newnode.value = value;
+                newnode.height=1;
+                return newnode;
+            }
+        } 
     }
 }
