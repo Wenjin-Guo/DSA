@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.FileIO;
 
 namespace DSA
 {
@@ -154,6 +155,79 @@ namespace DSA
 
         public void insert(int value){
             root = insertNode(root,value);
+        }
+
+        //Minimum node
+        public static AVLNode minimumNode(AVLNode root){
+            if(root.left==null){
+                return root;
+            }
+            return minimumNode(root.left);
+        }
+
+        //delete node in AVLTree
+        //case1: no child
+        //case2: one child
+        //case3: 2 children : find min in right-subtree -> 
+        //                    copy the value in targetted node ->
+        //                    delete duplicate from right-subtree
+        //OR                  find max in left ->
+        //                    copy the value in targetted node ->
+        //                    delete duplicate from left-subtree
+        //After deletion, check the balance
+        //identify rotation condition, and do the rotation
+        private AVLNode deleteNode(AVLNode root,int value){
+            if(root==null){   //base condition, no value found
+                Console.WriteLine("Value not found in BST");
+                return null;
+            }
+            if(value<root.value){  //
+                root.left = deleteNode(root.left,value);
+            }else if(value>root.value){
+                root.right = deleteNode(root.right,value);
+            }else{ //Wohoo found the node, get ready to be deleted
+                //case 1:
+                if(root.left==null&& root.right==null){
+                    root = null;
+                }
+                //case 2:
+                else if(root.left==null){
+                    root = root.right;
+                }else if(root.right == null){
+                    root = root.left;
+                }
+                //case 3: 2 children
+                else{
+                    AVLNode temp = minimumNode(root.right);
+                    root.value = temp.value;
+                    root.right = deleteNode(root.right,temp.value);
+                }
+            }
+
+            int balance = getBalance(root);
+            //leftleft condition
+            if(balance>1 && value<root.left.value){
+                return rotateRight(root);
+            }
+            //leftRight condition
+            if(balance>1 && value>root.left.value){
+                root.left = rotateLeft(root.left);
+                return rotateRight(root);
+            }
+            //rightRight condition
+            if(balance<-1 && value>root.right.value){
+                return rotateLeft(root);
+            }
+            //rightLeft condition
+            if(balance <-1 && value<root.right.value){
+                root.right = rotateRight(root.right);
+                return rotateLeft(root);
+            }
+            return root;
+        }
+
+        public void delete(int value){
+            deleteNode(root,value);
         }
     }
 }

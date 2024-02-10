@@ -414,7 +414,9 @@ class Hello{
         newAVL.insert(15);
         newAVL.insert(20);
         newAVL.levelOrder();
-        //newAVL.insert(5);
+        newAVL.delete(5);
+        Console.WriteLine();
+        newAVL.levelOrder();
 
     }      
 }
