@@ -408,7 +408,7 @@ class Hello{
         newBST.levelOrder();
         Console.WriteLine(); */
 
-        AVLTree newAVL = new AVLTree();
+        /* AVLTree newAVL = new AVLTree();
         newAVL.insert(5);
         newAVL.insert(10);
         newAVL.insert(15);
@@ -416,7 +416,9 @@ class Hello{
         newAVL.levelOrder();
         newAVL.delete(5);
         Console.WriteLine();
-        newAVL.levelOrder();
+        newAVL.levelOrder(); */
 
+        BinaryHeap BhH = new BinaryHeap(5);
+        
     }      
 }

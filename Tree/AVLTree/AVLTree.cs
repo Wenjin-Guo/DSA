@@ -79,7 +79,7 @@ namespace DSA
 
 
         //getHeight 
-        public int getHeight(AVLNode node){
+        private int getHeight(AVLNode node){
             if(node==null){
                 return 0;
             }else{
