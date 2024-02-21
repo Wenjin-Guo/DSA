@@ -418,7 +418,18 @@ class Hello{
         Console.WriteLine();
         newAVL.levelOrder(); */
 
-        BinaryHeap BhH = new BinaryHeap(5);
-        
+        BinaryHeap BH = new BinaryHeap(5);
+        BH.insert(10,"Min");
+        BH.insert(5,"Min");
+        BH.insert(15,"Min");
+        BH.insert(1,"Min");
+        BH.insert(11,"Min");
+        BH.insert(9,"Min");
+        BH.insert(20,"Min");
+        BH.insert(29,"Min");
+        BH.insert(19,"Min");
+        Console.WriteLine(BH.arr.Length);
+        Console.WriteLine(BH.sizeOfTree);
+        BH.levelOrder();
     }      
 }
