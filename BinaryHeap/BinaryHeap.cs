@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace DSA
@@ -89,6 +90,69 @@ namespace DSA
             sizeOfTree++;
             heapifyBottomToTop(sizeOfTree,typeHeap);
             Console.WriteLine("Inserted "+value+" successfully in Heap");
+        }
+
+        //Heapify for extract root node
+        public void heapifyToptoBottom(int index, String heapType){
+            int left = 2*index;
+            int right = 2*index+1;
+            int swapChild;
+            if(left >=sizeOfTree){
+                return;
+            }
+            if(heapType == "Min"){
+                //1 child case
+                if(sizeOfTree == left){
+                    if(arr[index] > arr[left]){
+                        (arr[index],arr[left])=(arr[left],arr[index]);
+                        return;
+                    }
+                }else{
+                    //2 child case
+                    if(arr[left] < arr[right]){
+                        swapChild = left;
+                    }else{
+                        swapChild = right;
+                    }
+                    if(arr[index] > arr[swapChild]){
+                        (arr[index],arr[swapChild])=(arr[swapChild],arr[index]);
+                    }
+                }
+                
+            }
+            else if(heapType == "Max"){
+                //1 child case
+                if(sizeOfTree == left){
+                    if(arr[index] < arr[left]){
+                        (arr[index],arr[left])=(arr[left],arr[index]);
+                    }
+                    return;
+                }else{
+                    //2 child case
+                    if(arr[left] > arr[right]){
+                        swapChild = left;
+                    }else{
+                        swapChild = right;
+                    }
+                    if(arr[index] < arr[swapChild]){
+                        (arr[index],arr[swapChild])=(arr[swapChild],arr[index]);
+                    }
+                }
+            }
+            heapifyToptoBottom(swapChild,heapType);
+        }
+
+        //extract the root node or head of Binary heap
+        public int extractHeadofBH(String heapType){
+            if(isEmpty()){
+                return -1;
+            }else{
+                int extractedValue = arr[1];
+                arr[1] = arr[sizeOfTree];
+                sizeOfTree--;
+                heapifyToptoBottom(1, heapType);
+                return extractedValue;
+            }
         }
     }
 }
