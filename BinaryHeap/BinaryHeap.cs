@@ -96,7 +96,7 @@ namespace DSA
         public void heapifyToptoBottom(int index, String heapType){
             int left = 2*index;
             int right = 2*index+1;
-            int swapChild;
+            int swapChild = -1;
             if(left >=sizeOfTree){
                 return;
             }
@@ -118,7 +118,6 @@ namespace DSA
                         (arr[index],arr[swapChild])=(arr[swapChild],arr[index]);
                     }
                 }
-                
             }
             else if(heapType == "Max"){
                 //1 child case

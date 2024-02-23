@@ -432,5 +432,7 @@ class Hello{
         Console.WriteLine(BH.arr.Length);
         Console.WriteLine(BH.sizeOfTree);
         BH.levelOrder();
+        BH.extractHeadofBH("Min");
+        BH.levelOrder();
     }      
 }
