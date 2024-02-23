@@ -141,7 +141,7 @@ namespace DSA
             heapifyToptoBottom(swapChild,heapType);
         }
 
-        //extract the root node or head of Binary heap
+        //extract the root node or head of Binary heap, delete the head node
         public int extractHeadofBH(String heapType){
             if(isEmpty()){
                 return -1;
@@ -152,6 +152,12 @@ namespace DSA
                 heapifyToptoBottom(1, heapType);
                 return extractedValue;
             }
+        }
+
+        //delete entire Binary Heap
+        public void deleteBH(){
+            arr = null;
+            Console.WriteLine("The BH has been successfully deleted.");
         }
     }
 }
