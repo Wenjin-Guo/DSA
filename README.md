@@ -35,5 +35,5 @@ This repository contains a collection of code snippets and implementations for l
 
 ### Cloning the Repository
 ```bash
-git clone https://github.com/username/data-structures-algorithms.git
-cd data-structures-algorithms
+git clone https://github.com/Wenjin-Guo/DSA.git
+cd DSA
